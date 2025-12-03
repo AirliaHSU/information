@@ -312,4 +312,380 @@
     }
 
     .work-tags {
-      displa
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-sub);
+    }
+
+    .work-tags span {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(180, 183, 198, 0.5);
+    }
+
+    .work-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: radial-gradient(circle at top, #202030, #050507);
+      border: 1px solid rgba(245, 211, 122, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .work-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      opacity: 0.85;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(9, 9, 13, 0.9);
+      border: 1px solid rgba(210, 213, 225, 0.7);
+      color: #e0e3ee;
+    }
+
+    /* 分鏡作品 */
+    .storyboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .story-card {
+      background: radial-gradient(circle at top, #171722, #07070b);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 18px 18px;
+    }
+
+    .story-card h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--gold);
+    }
+
+    .story-card p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .story-image-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(210, 213, 225, 0.7);
+      background: #111;
+    }
+
+    .story-image-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    /* 聯絡方式 */
+    .contact-card {
+      margin-top: 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #191922, #050507);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(245, 211, 122, 0.5);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .contact-highlight {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .contact-highlight span {
+      color: var(--gold);
+    }
+
+    footer {
+      margin-top: 26px;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #666680;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 28px 16px 56px;
+      }
+
+      .intro-section {
+        grid-template-columns: 1fr;
+      }
+
+      .headline {
+        font-size: 1.6rem;
+        line-height: 1.4;
+      }
+
+      .header-top {
+        align-items: flex-start;
+      }
+
+      .work-card {
+        padding: 16px 14px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-accent"></div>
+
+    <header>
+      <div class="header-top">
+        <div class="avatar">
+          <!-- 把 avatar.png 換成你的頭像檔名或網址 -->
+          <img src="avatar.png" alt="Airlia 的頭像" />
+        </div>
+        <div>
+          <div class="main-name">Airlia / 放空</div>
+          <div class="headline">
+            <strong>2D 動畫設計師</strong>｜分鏡 × 動態視覺
+          </div>
+        </div>
+      </div>
+      <p class="subtitle">
+        專注將抽象概念轉成好理解、好觀看的動畫敘事
+        <span class="dot"></span>
+        接案以明確需求與尊重創意勞動為前提
+      </p>
+    </header>
+
+    <!-- 自我介紹 ＋ 技能 -->
+    <section class="intro-section">
+      <div class="card">
+        <h2><span class="dot"></span>ABOUT</h2>
+        <p>
+          我是 Airlia（放空），自由接案的 2D 動畫師與視覺創作者。擁有超過 8 年市場經驗，
+          曾合作專案包含平台宣傳動畫、品牌形象影片、產品介紹、課程影片與社群動態圖像等。
+        </p>
+        <p style="margin-top:8px;">
+          我擅長從「文字腳本／需求方向」出發，協助整理資訊結構、發想畫面節奏，
+          用清楚的分鏡與流暢的動態，把顧客想說的話變成觀眾看得懂、看得完的故事。
+        </p>
+        <div class="tag-row">
+          <span class="tag">2D 動畫設計</span>
+          <span class="tag">分鏡腳本規劃</span>
+          <span class="tag">品牌視覺整合</span>
+          <span class="tag">社群影音素材</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2><span class="dot"></span>SKILLS</h2>
+        <ul class="skills-list">
+          <li>平台／品牌宣傳動畫：畫面節奏規劃、資訊分段與轉場設計</li>
+          <li>分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握</li>
+          <li>角色與圖像動態：角色表情、肢體動態、Icon／UI 動態效果</li>
+          <li>社群圖像與動態貼文：視覺主題統一、適配不同比例輸出</li>
+        </ul>
+        <div class="tag-row" style="margin-top:10px;">
+          <span class="tag">After Effects</span>
+          <span class="tag">Premiere</span>
+          <span class="tag">Photoshop</span>
+          <span class="tag">Illustrator</span>
+          <span class="tag">Clip Studio Paint</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 動畫作品 -->
+    <div class="section-title">
+      <span class="line"></span>
+      <span>動畫作品</span>
+      <span class="line"></span>
+    </div>
+
+    <section class="works-grid">
+      <!-- HUZU -->
+      <article class="work-card">
+        <div class="work-header">
+          <div class="work-title">
+            <span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span>
+          </div>
+          <div class="work-tags">
+            <span>平台宣傳</span>
+            <span>分鏡＋全流程動畫</span>
+            <span>2025</span>
+          </div>
+        </div>
+        <p class="work-desc">
+          為「HUZU 平台」製作的新型態產學互助平台宣傳影片。從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，
+          目標是在短時間內清楚說明平台運作模式與使用者價值。
+        </p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/owZXk7mlcvg"
+            title="HUZU 平台宣傳動畫"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="work-footer">
+          <div class="chips">
+            <span class="chip">分鏡設計</span>
+            <span class="chip">資訊結構整理</span>
+            <span class="chip">角色與場景動態</span>
+          </div>
+          <span>工具：AI / PS / AE / PR</span>
+        </div>
+      </article>
+
+      <!-- Holly Hair -->
+      <article class="work-card">
+        <div class="work-header">
+          <div class="work-title">
+            <span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span>
+          </div>
+          <div class="work-tags">
+            <span>品牌形象</span>
+            <span>核心概念轉譯</span>
+            <span>2024</span>
+          </div>
+        </div>
+        <p class="work-desc">
+          以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，
+          建立穩定又具有溫度的品牌印象，用於社群與簡報皆具延伸性。
+        </p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/EHiU6NXAqSo"
+            title="Holly Hair 品牌核心動畫"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="work-footer">
+          <div class="chips">
+            <span class="chip">品牌視覺統整</span>
+            <span class="chip">動態設計</span>
+          </div>
+          <span>工具：AI / PS / AE</span>
+        </div>
+      </article>
+
+      <!-- 璽朵批發平台廣告動畫 -->
+      <article class="work-card">
+        <div class="work-header">
+          <div class="work-title">
+            <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
+          </div>
+          <div class="work-tags">
+            <span>電商平台</span>
+            <span>情境式廣告</span>
+            <span>2024</span>
+          </div>
+        </div>
+        <p class="work-desc">
+          以輕快節奏與情境畫面，帶出批發平台的使用情境與優勢。透過人物表情、介面動畫與轉場設計，
+          讓抽象的平台功能變得具體又好理解，適合社群廣告投放。
+        </p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/wmJIkAjpgsQ"
+            title="璽朵批發平台廣告 動畫"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="work-footer">
+          <div class="chips">
+            <span class="chip">角色與情境設計</span>
+            <span class="chip">社群投放版本</span>
+          </div>
+          <span>工具：AI / PS / AE</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- 分鏡作品 -->
+    <div class="section-title">
+      <span class="line"></span>
+      <span>分鏡作品</span>
+      <span class="line"></span>
+    </div>
+
+    <section class="storyboard-grid">
+      <article class="story-card">
+        <h4>【分鏡腳本專案】</h4>
+        <p>
+          只提供分鏡腳本與畫面規劃的專案示例。從腳本拆解情節、設計鏡頭構圖與運鏡節奏，
+          協助客戶在正式進入動畫製作前，就先確認說故事的視覺走向與重點畫面。
+        </p>
+        <div class="story-image-wrap">
+          <!-- 把 storyboard-sample-01.jpg 換成你的分鏡圖檔名 -->
+          <img src="storyboard-sample-01.jpg" alt="分鏡作品示意圖">
+        </div>
+      </article>
+    </section>
+
+    <!-- 聯絡方式 -->
+    <section class="contact-card">
+      <h3>CONTACT</h3>
+      <p>目前以自由接案形式合作，專注於 2D 動畫與分鏡相關專案。</p>
+      <p>歡迎提供清楚需求與預算區間，我可以協助一起整理腳本與製作規劃。</p>
+      <p class="contact-highlight">
+        E-mail：<span>tryit308793@gmail.com</span>　｜　Line：<span>tryit308793</span>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Airlia / 放空．2D 動畫與視覺創作
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
