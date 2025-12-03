@@ -34,6 +34,30 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      /* --- 覆寫金色調性：更偏金屬、少一點螢光黃 --- */
+:root {
+  --gold-deep:  #c08b3e;
+  --gold-mid:   #e0b96a;
+  --gold-light: #ffe4b0;
+  --gold:       #ffd883;
+}
+
+/* 標題金字微微發光 */
+.headline strong,
+.card h2,
+.work-title .bracket {
+  text-shadow: 0 0 6px rgba(255, 216, 131, 0.55);
+}
+/* 動畫作品區那條線：改成單色金漸層 */
+.section-title .line {
+  background: linear-gradient(
+    90deg,
+    rgba(192, 139, 62, 0.0),
+    rgba(255, 216, 131, 0.95),
+    rgba(192, 139, 62, 0.0)
+  );
+}
+
     }
 
     body {
