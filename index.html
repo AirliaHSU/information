@@ -9,31 +9,32 @@
 
   <style>
 :root {
-  /* ===== 墨綠主題色 ===== */
-  --green-deep: #0f1a17;
-  --green-mid: #1c2e29;
-  --green-soft: #2f4a43;
+  /* ===== 更深、更純的墨綠 ===== */
+  --green-deep: #0b1311;    /* 幾乎黑，但帶極輕微綠 */
+  --green-mid:  #15211d;    /* 深墨綠中間層 */
+  --green-soft: #1f2f2a;    /* 卡片與邊框的柔霧綠 */
 
-  /* ===== 暖金點綴（保留既有金色，稍微調柔一點）===== */
-  --gold-deep: #6f5b2f;
-  --gold-mid:  #b79a5a;
-  --gold-light:#e8d6a8;
+  /* ===== 暖金點綴（不過亮、柔金屬質感）===== */
+  --gold-deep:  #6c552c;
+  --gold-mid:   #b7995b;
+  --gold-light: #e8d6a8;
   --gold: var(--gold-mid);
 
   /* ===== 文字 ===== */
   --text-main: #e8e8e3;
   --text-sub: #c0c7c2;
 
-  /* ===== 背景 ===== */
+  /* ===== 背景（不偏藍版本）===== */
   --bg-main: var(--green-deep);
-  --bg-elevated: rgba(20, 30, 27, 0.72); /* 墨綠透明玻璃感 */
-  --border-soft: rgba(140, 150, 145, 0.28);
+  --bg-elevated: rgba(15, 22, 19, 0.72); /* 極深墨綠玻璃感 */
+  --border-soft: rgba(160, 170, 165, 0.22);
 
-  /* ===== 圓角、陰影 ===== */
+  /* ===== 圓角 & 陰影 ===== */
   --radius-lg: 18px;
   --radius-md: 12px;
   --shadow-soft: 0 6px 22px rgba(0, 0, 0, 0.55);
 }
+
     * {
       box-sizing: border-box;
       margin: 0;
