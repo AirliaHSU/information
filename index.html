@@ -34,6 +34,58 @@
   --radius-md: 12px;
   --shadow-soft: 0 6px 22px rgba(0, 0, 0, 0.55);
 }
+/* ===== 動畫作品輪播 ===== */
+.works-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-window {
+  position: relative;
+}
+
+/* 輪播用的 work-card：只有有 data-slide 才會被輪播控制 */
+.work-card[data-slide] {
+  display: none;
+}
+
+.work-card[data-slide].is-active {
+  display: block;
+}
+
+/* 底下 3 個小圓點 */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--gold-mid);
+  background: transparent;
+  opacity: 0.45;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dot.is-active {
+  width: 18px;
+  background: var(--gold-mid);
+  opacity: 1;
+  transition: width 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}
 
     * {
       box-sizing: border-box;
@@ -567,7 +619,6 @@
         </div>
       </article>
     </section>
-
     <!-- 動畫作品 -->
     <div class="section-title">
       <span class="section-title-line"></span>
@@ -575,113 +626,148 @@
       <span class="section-title-line"></span>
     </div>
 
+    <!-- 3 支動畫：輪播區 -->
+    <section class="works-carousel">
+      <div class="carousel-window">
+        <!-- slide 1：HUZU -->
+        <article class="work-card" data-slide="0">
+          <div class="work-inner">
+            <div class="work-header">
+              <div class="work-title">
+                <span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span>
+              </div>
+              <div class="work-tags">
+                <span>平台宣傳</span>
+                <span>分鏡＋全流程動畫</span>
+                <span>2025</span>
+              </div>
+            </div>
+            <p class="work-desc">
+              為「HUZU 平台」製作的新型態產學互助平台宣傳影片。
+              從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚、易懂地說明平台運作模式與使用者價值。
+            </p>
+            <p class="work-desc">
+              製作過程中，也善用 AI（ChatGPT）協助整理內容概念與初版草稿，再進一步轉化為適合動畫呈現的畫面節奏與視覺敘事，
+              大幅提升了資訊溝通效率與腳本討論品質。
+            </p>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/owZXk7mlcvg"
+                title="HUZU 平台宣傳動畫"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-footer">
+              <div class="chips">
+                <span class="chip">分鏡設計</span>
+                <span class="chip">資訊結構整理</span>
+                <span class="chip">角色與場景動態</span>
+                <span class="chip">AI 協作（ChatGPT）</span>
+              </div>
+              <span>工具：AI / PS / AE / PR</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- slide 2：Holly Hair -->
+        <article class="work-card" data-slide="1">
+          <div class="work-inner">
+            <div class="work-header">
+              <div class="work-title">
+                <span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span>
+              </div>
+              <div class="work-tags">
+                <span>品牌形象</span>
+                <span>核心概念轉譯</span>
+                <span>2024</span>
+              </div>
+            </div>
+            <p class="work-desc">
+              以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。
+              透過 Logo、色彩與關鍵畫面設計，建立穩定又具有溫度的品牌印象。
+            </p>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/EHiU6NXAqSo"
+                title="Holly Hair 品牌核心動畫"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-footer">
+              <div class="chips">
+                <span class="chip">品牌視覺統整</span>
+                <span class="chip">動態設計</span>
+              </div>
+              <span>工具：AI / PS / AE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- slide 3：璽朵批發平台廣告 -->
+        <article class="work-card" data-slide="2">
+          <div class="work-inner">
+            <div class="work-header">
+              <div class="work-title">
+                <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
+              </div>
+              <div class="work-tags">
+                <span>平台廣告</span>
+                <span>角色情境動畫</span>
+                <span>2023</span>
+              </div>
+            </div>
+            <p class="work-desc">
+              以日常情境切入，帶出批發平台的痛點與解方。
+              透過角色表情、視線與畫面節奏的設計，加強觀眾代入感與轉換意圖。
+            </p>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/wmJIkAjpgsQ"
+                title="璽朵批發平台廣告 動畫"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="work-footer">
+              <div class="chips">
+                <span class="chip">腳本拆解</span>
+                <span class="chip">角色動態</span>
+                <span class="chip">社群投放友善版</span>
+              </div>
+              <span>工具：AI / PS / AE</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 下方 3 個小圓點 -->
+      <div class="carousel-dots" aria-label="作品輪播切換">
+        <button class="carousel-dot is-active" type="button" aria-label="HUZU 平台宣傳動畫"></button>
+        <button class="carousel-dot" type="button" aria-label="Holly Hair 品牌核心動畫"></button>
+        <button class="carousel-dot" type="button" aria-label="璽朵批發平台廣告 動畫"></button>
+      </div>
+    </section>
+
+    <!-- 分鏡說明卡（之後可放圖） -->
     <section class="works-grid">
-      <!-- HUZU -->
       <article class="work-card">
         <div class="work-inner">
           <div class="work-header">
             <div class="work-title">
-              <span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span>
+              <span class="bracket">【</span>分鏡規劃 × 動畫製作搭配<span class="bracket">】</span>
             </div>
             <div class="work-tags">
-              <span>平台宣傳</span>
-              <span>分鏡＋全流程動畫</span>
-              <span>2025</span>
+              <span>分鏡腳本</span>
+              <span>畫面節奏規劃</span>
             </div>
           </div>
-          <p class="work-desc">
-            為「HUZU 平台」製作的新型態產學互助平台宣傳影片。
-            從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚、易懂地說明平台運作模式與使用者價值。
+          <p class="work-desc story-card">
+            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。
+            若未來你準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
           </p>
-          <p class="work-desc">
-            製作過程中，也善用 AI（ChatGPT）協助整理內容概念與初版草稿，再進一步轉化為適合動畫呈現的畫面節奏與視覺敘事，
-            大幅提升了資訊溝通效率與腳本討論品質。
-          </p>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/owZXk7mlcvg"
-              title="HUZU 平台宣傳動畫"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="work-footer">
-            <div class="chips">
-              <span class="chip">分鏡設計</span>
-              <span class="chip">資訊結構整理</span>
-              <span class="chip">角色與場景動態</span>
-              <span class="chip">AI 協作（ChatGPT）</span>
-            </div>
-            <span>工具：AI / PS / AE / PR</span>
-          </div>
         </div>
       </article>
+    </section>
 
-      <!-- Holly Hair -->
-      <article class="work-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span>
-            </div>
-            <div class="work-tags">
-              <span>品牌形象</span>
-              <span>核心概念轉譯</span>
-              <span>2024</span>
-            </div>
-          </div>
-          <p class="work-desc">
-            以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，建立穩定又具有溫度的品牌印象。
-          </p>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/EHiU6NXAqSo"
-              title="Holly Hair 品牌核心動畫"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="work-footer">
-            <div class="chips">
-              <span class="chip">品牌視覺統整</span>
-              <span class="chip">動態設計</span>
-            </div>
-            <span>工具：AI / PS / AE</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 璽朵平台廣告 -->
-      <article class="work-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
-            </div>
-            <div class="work-tags">
-              <span>平台廣告</span>
-              <span>角色情境動畫</span>
-              <span>2023</span>
-            </div>
-          </div>
-          <p class="work-desc">
-            以日常情境切入，帶出批發平台的痛點與解方。透過角色表情、視線與畫面節奏的設計，加強觀眾代入感與轉換意圖。
-          </p>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/wmJIkAjpgsQ"
-              title="璽朵批發平台廣告 動畫"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="work-footer">
-            <div class="chips">
-              <span class="chip">腳本拆解</span>
-              <span class="chip">角色動態</span>
-              <span class="chip">社群投放友善版</span>
-            </div>
-            <span>工具：AI / PS / AE</span>
-          </div>
-        </div>
-      </article>
 
       <!-- 分鏡說明卡（之後可放圖） -->
       <article class="work-card">
@@ -732,8 +818,50 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+ <script>
+  // 年份
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // 動畫作品輪播
+  (function () {
+    const slides = document.querySelectorAll('.work-card[data-slide]');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    if (!slides.length || slides.length !== dots.length) return;
+
+    let current = 0;
+    let timer = null;
+
+    function showSlide(index) {
+      current = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === current);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === current);
+      });
+    }
+
+    function startAuto() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(function () {
+        showSlide(current + 1);
+      }, 10000); // 10 秒自動切換
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', function () {
+        showSlide(i);
+        startAuto(); // 點擊後重新計時，避免一下子又跳走
+      });
+    });
+
+    // 初始化
+    showSlide(0);
+    startAuto();
+  })();
+</script>
 </body>
 </html>
