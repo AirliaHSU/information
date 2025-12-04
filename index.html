@@ -8,24 +8,32 @@
   <meta name="author" content="Airlia / 放空" />
 
   <style>
-    :root {
-      --bg: #050507;
-      --bg-elevated: rgba(13, 13, 20, 0.9);
-      --text-main: #f5f5f5;
-      --text-sub: #b8bbc7;
+:root {
+  /* ===== 墨綠主題色 ===== */
+  --green-deep: #0f1a17;
+  --green-mid: #1c2e29;
+  --green-soft: #2f4a43;
 
-      /* 統一暖金箔色系 */
-      --gold-deep: #7a5a26;
-      --gold-mid: #c89a3a;
-      --gold-light: #f2d8a2;
-      --gold: var(--gold-mid);
+  /* ===== 暖金點綴（保留既有金色，稍微調柔一點）===== */
+  --gold-deep: #6f5b2f;
+  --gold-mid:  #b79a5a;
+  --gold-light:#e8d6a8;
+  --gold: var(--gold-mid);
 
-      --border-soft: #262632;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
-    }
+  /* ===== 文字 ===== */
+  --text-main: #e8e8e3;
+  --text-sub: #c0c7c2;
 
+  /* ===== 背景 ===== */
+  --bg-main: var(--green-deep);
+  --bg-elevated: rgba(20, 30, 27, 0.72); /* 墨綠透明玻璃感 */
+  --border-soft: rgba(140, 150, 145, 0.28);
+
+  /* ===== 圓角、陰影 ===== */
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-soft: 0 6px 22px rgba(0, 0, 0, 0.55);
+}
     * {
       box-sizing: border-box;
       margin: 0;
