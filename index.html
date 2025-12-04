@@ -8,13 +8,93 @@
   <meta name="author" content="Airlia / 放空" />
 
   <style>
-    iframe {
+    :root {
+      --bg: #050507;
+      --bg-elevated: rgba(13, 13, 20, 0.9);
+      --text-main: #f5f5f5;
+      --text-sub: #b8bbc7;
 
-    /* ===== HERO 區：頭像＋名字＋短介紹 ===== */
+      /* 統一暖金箔色系 */
+      --gold-deep: #7a5a26;
+      --gold-mid: #c89a3a;
+      --gold-light: #f2d8a2;
+      --gold: var(--gold-mid);
+
+      --border-soft: #262632;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", system-ui,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141421 0, #050507 55%);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 頁面淡淡金霧 */
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.5;
+    }
+
+    .page::before {
+      top: -120px;
+      left: -80px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(
+        circle at center,
+        rgba(242, 216, 162, 0.32),
+        rgba(122, 90, 38, 0.05),
+        transparent 70%
+      );
+    }
+
+    .page::after {
+      bottom: -140px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(
+        circle at center,
+        rgba(242, 216, 162, 0.32),
+        rgba(122, 90, 38, 0.05),
+        transparent 72%
+      );
+    }
+
+    /* ===== HERO：頭像＋名字＋一句話 ===== */
 
     .hero {
       max-width: 880px;
-      margin: 12px auto 32px;
+      margin: 0 auto 32px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -32,8 +112,8 @@
     }
 
     .hero-avatar {
-      width: 96px;
-      height: 96px;
+      width: 112px;
+      height: 112px;
       border-radius: 50%;
       border: 2px solid var(--gold-mid);
       object-fit: cover;
@@ -80,25 +160,12 @@
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
-      box-shadow:none;
+      box-shadow: none;
       padding: 22px 24px 20px;
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(12px);
       height: 100%;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top left,
-        rgba(246, 220, 162, 0.12),
-        transparent 60%
-      );
-      opacity: 0.9;
-      pointer-events: none;
     }
 
     .card-inner {
@@ -121,7 +188,7 @@
       height: 9px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
-      box-shadow: 0 0 10px rgba(246, 220, 162, 0.6);
+      box-shadow: 0 0 10px rgba(242, 216, 162, 0.55);
       flex-shrink: 0;
     }
 
@@ -132,6 +199,7 @@
     .card p {
       font-size: 0.95rem;
       color: var(--text-sub);
+      text-align: justify;
     }
 
     .card p + p {
@@ -150,14 +218,9 @@
       padding: 4px 10px;
       border-radius: 999px;
       background: rgba(10, 10, 16, 0.9);
-      border: 1px solid rgba(180, 180, 200, 0.4);
+      border: 1px solid rgba(180, 180, 200, 0.45);
       color: var(--text-sub);
       white-space: nowrap;
-    }
-
-    .tag.main {
-      border-color: rgba(246, 220, 162, 0.9);
-      color: var(--gold);
     }
 
     .skills-list {
@@ -171,6 +234,7 @@
       position: relative;
       padding-left: 14px;
       margin: 4px 0;
+      text-align: justify;
     }
 
     .skills-list li::before {
@@ -216,8 +280,13 @@
     .section-title-line {
       flex: 1;
       height: 1px;
-      background: radial-gradient(circle at center, var(--gold-mid), transparent 65%);
-      opacity: 0.9;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(200, 154, 58, 0.8),
+        transparent
+      );
+      opacity: 0.95;
     }
 
     .section-title span.label {
@@ -238,7 +307,7 @@
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
-      box-shadow:none;
+      box-shadow: none;
       padding: 18px 18px 16px;
       position: relative;
       overflow: hidden;
@@ -251,7 +320,7 @@
       inset: 0;
       background: radial-gradient(
         circle at top left,
-        rgba(246, 220, 162, 0.1),
+        rgba(242, 216, 162, 0.12),
         transparent 65%
       );
       pointer-events: none;
@@ -298,6 +367,7 @@
       font-size: 0.9rem;
       color: var(--text-sub);
       margin-bottom: 10px;
+      text-align: justify;
     }
 
     .video-wrapper {
@@ -307,7 +377,7 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       background: radial-gradient(circle at top, #202030, #050507);
-      border: 1px solid rgba(246, 220, 162, 0.25);
+      border: 1px solid rgba(242, 216, 162, 0.25);
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
     }
 
@@ -360,7 +430,7 @@
       text-align: center;
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(246, 220, 162, 0.55);
+      border: 1px solid rgba(242, 216, 162, 0.55);
       padding: 20px 18px 18px;
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(12px);
@@ -455,7 +525,7 @@
             嗨，我是 Airlia（放空），一位自由接案的 2D 動畫設計師。擁有 8 年以上的動畫與視覺整合經驗，合作內容包含平台宣傳動畫、品牌形象影片、產品視覺化與課程影片等。
           </p>
           <p>
-            我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、更好觀看。希望每支動畫都能 精準傳遞核心訊息，並讓觀眾自然地看下去。
+            我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、也更好觀看。希望每支動畫都能精準傳遞核心訊息，並讓觀眾自然地看下去。
           </p>
           <div class="tag-row">
             <span class="tag">2D 動畫設計</span>
@@ -511,6 +581,7 @@
           <p class="work-desc">
             為「HUZU 平台」製作的新型態產學互助平台宣傳影片。
             從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚、易懂地說明平台運作模式與使用者價值。
+          </p>
           <p class="work-desc">
             製作過程中，也善用 AI（ChatGPT）協助整理內容概念與初版草稿，再進一步轉化為適合動畫呈現的畫面節奏與視覺敘事，
             大幅提升了資訊溝通效率與腳本討論品質。
@@ -614,7 +685,7 @@
             </div>
           </div>
           <p class="work-desc story-card">
-            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。若未來你準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
+            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。未來準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
           </p>
         </div>
       </article>
