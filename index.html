@@ -10,18 +10,15 @@
   <style>
     :root {
       --bg: #050507;
-      --bg-elevated: #101015;
+      --bg-elevated: rgba(12, 12, 18, 0.9);
       --text-main: #f5f5f5;
       --text-sub: #b7b7c2;
 
-      /* 三段金色：深金 → 中金 → 淡金 */
       --gold-deep: #8a6a2f;
-      --gold-mid:  #c9a14f;
-      --gold-light:#f8e6b7;
+      --gold-mid: #c89b3c;
+      --gold-light: #f6dca2;
       --gold: var(--gold-light);
 
-      --red: #b34747;
-      --green: #2f5f46;
       --border-soft: #262632;
       --radius-lg: 18px;
       --radius-md: 12px;
@@ -70,13 +67,13 @@
     .page::before {
       top: -120px;
       left: -60px;
-      width: 280px;
-      height: 280px;
+      width: 260px;
+      height: 260px;
       background: radial-gradient(
         circle at center,
-        rgba(248, 230, 183, 0.45),
-        rgba(201, 161, 79, 0.06),
-        transparent 70%
+        rgba(246, 220, 162, 0.45),
+        rgba(200, 155, 60, 0.08),
+        transparent 72%
       );
     }
 
@@ -87,64 +84,53 @@
       height: 320px;
       background: radial-gradient(
         circle at center,
-        rgba(248, 230, 183, 0.42),
+        rgba(246, 220, 162, 0.42),
         rgba(138, 106, 47, 0.08),
-        transparent 72%
+        transparent 74%
       );
     }
 
-    /* ===== Hero：頭像＋名字 ===== */
+    /* ===== HERO 區：頭像＋名字＋短介紹 ===== */
 
     .hero {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    .hero-avatar-wrap {
-      width: 88px;
-      height: 88px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 2px solid rgba(248, 230, 183, 0.85);
-      box-shadow:
-        0 0 20px rgba(248, 230, 183, 0.4),
-        0 12px 28px rgba(0, 0, 0, 0.8);
-      background: radial-gradient(circle at top, #2b2720, #08070a);
-      flex-shrink: 0;
-    }
-
-    .hero-avatar-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-text {
+      max-width: 880px;
+      margin: 12px auto 32px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-mid);
+      object-fit: cover;
+      background: #111;
     }
 
     .hero-name {
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 700;
       letter-spacing: 0.12em;
     }
 
-    .hero-name span.alias {
-      font-size: 0.95rem;
-      color: var(--gold);
-      margin-left: 6px;
-    }
-
     .hero-role {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
+      margin-top: 4px;
     }
 
     .hero-role strong {
@@ -152,31 +138,34 @@
     }
 
     .hero-tagline {
-      font-size: 0.9rem;
+      margin-top: 10px;
+      font-size: 0.95rem;
       color: var(--text-sub);
+      max-width: 640px;
     }
 
-    /* ===== 自我介紹卡片 ===== */
+    /* ===== ABOUT / SKILLS 區 ===== */
 
     .intro-section {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+      gap: 24px;
       margin-top: 24px;
       margin-bottom: 40px;
-      align-items: stretch;
+      position: relative;
+      z-index: 1;
     }
 
     .card {
-      background: rgba(9, 9, 13, 0.88); /* 半透明 */
+      background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
       padding: 22px 24px 20px;
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      backdrop-filter: blur(12px);
+      height: 100%;
     }
 
     .card::before {
@@ -185,10 +174,10 @@
       inset: 0;
       background: radial-gradient(
         circle at top left,
-        rgba(245, 211, 122, 0.16),
-        transparent 55%
+        rgba(246, 220, 162, 0.12),
+        transparent 60%
       );
-      opacity: 0.8;
+      opacity: 0.9;
       pointer-events: none;
     }
 
@@ -200,41 +189,37 @@
     .card-title {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
+      gap: 10px;
+      margin-bottom: 12px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-bottom: 10px;
-      color: var(--gold);
+      font-size: 0.9rem;
     }
 
     .card-title-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--gold-light);
-      box-shadow: 0 0 16px rgba(248, 230, 183, 0.6);
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
+      box-shadow: 0 0 10px rgba(246, 220, 162, 0.6);
       flex-shrink: 0;
     }
 
     .card-title-text {
-      font-weight: 600;
+      color: var(--text-main);
     }
 
     .card p {
       font-size: 0.95rem;
       color: var(--text-sub);
-      text-align: justify;
     }
 
     .card p + p {
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
-    /* 關鍵字膠囊：銀灰系 */
-
     .tag-row {
-      margin-top: 14px;
+      margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -244,80 +229,100 @@
       font-size: 0.78rem;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #dde0ea;
+      background: rgba(10, 10, 16, 0.9);
+      border: 1px solid rgba(180, 180, 200, 0.4);
+      color: var(--text-sub);
       white-space: nowrap;
     }
 
-    /* SKILLS 列表：左右對齊＋小圓點 */
+    .tag.main {
+      border-color: rgba(246, 220, 162, 0.9);
+      color: var(--gold);
+    }
 
     .skills-list {
-      margin-top: 10px;
+      margin-top: 6px;
       list-style: none;
-      padding-left: 0;
       font-size: 0.9rem;
       color: var(--text-sub);
     }
 
     .skills-list li {
       position: relative;
-      padding-left: 1.2em;
+      padding-left: 14px;
       margin: 4px 0;
-      text-align: justify;
     }
 
     .skills-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.78em;
+      top: 0.72em;
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--gold-light);
+      background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
     }
 
-    /* ===== Section 標題：動畫作品 / 分鏡 × 動畫 ===== */
+    .tools-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tool-chip {
+      font-size: 0.78rem;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(5, 5, 9, 0.96);
+      border: 1px solid rgba(190, 190, 210, 0.45);
+      color: var(--text-sub);
+    }
+
+    /* ===== Section title：動畫作品 ===== */
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       margin: 40px 0 18px;
+      font-size: 0.95rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-size: 0.9rem;
       color: var(--text-sub);
     }
 
-    .section-title .line {
+    .section-title-line {
       flex: 1;
       height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgba(201, 161, 79, 0),
-        rgba(201, 161, 79, 0.95),
-        rgba(201, 161, 79, 0)
-      );
+      background: radial-gradient(circle at center, var(--gold-mid), transparent 65%);
+      opacity: 0.9;
     }
 
-    /* ===== 動畫作品卡片 ===== */
+    .section-title span.label {
+      white-space: nowrap;
+    }
+
+    /* ===== 作品卡片 ===== */
 
     .works-grid {
       display: flex;
       flex-direction: column;
       gap: 26px;
+      position: relative;
+      z-index: 1;
     }
 
     .work-card {
-      background: radial-gradient(circle at top, rgba(255, 190, 120, 0.07), #09090d);
+      background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
       padding: 18px 18px 16px;
       position: relative;
       overflow: hidden;
+      backdrop-filter: blur(12px);
     }
 
     .work-card::before {
@@ -325,9 +330,9 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(
-        circle at bottom,
-        rgba(255, 196, 140, 0.08),
-        transparent 60%
+        circle at top left,
+        rgba(246, 220, 162, 0.1),
+        transparent 65%
       );
       pointer-events: none;
     }
@@ -340,7 +345,7 @@
     .work-header {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       align-items: baseline;
       margin-bottom: 8px;
     }
@@ -365,7 +370,7 @@
     .work-tags span {
       padding: 2px 8px;
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -373,7 +378,6 @@
       font-size: 0.9rem;
       color: var(--text-sub);
       margin-bottom: 10px;
-      text-align: justify;
     }
 
     .video-wrapper {
@@ -383,8 +387,8 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       background: radial-gradient(circle at top, #202030, #050507);
-      border: 1px solid rgba(245, 211, 122, 0.2);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(246, 220, 162, 0.25);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
     }
 
     .video-wrapper iframe {
@@ -402,7 +406,9 @@
       margin-top: 8px;
       font-size: 0.8rem;
       color: var(--text-sub);
-      opacity: 0.9;
+      opacity: 0.85;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .chips {
@@ -416,54 +422,15 @@
       border-radius: 999px;
       background: rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.78rem;
     }
 
-    /* ===== 分鏡 × 動畫 區塊 ===== */
+    /* ===== 分鏡卡片（暫時文字版） ===== */
 
-    .storyboard-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    .sb-card {
-      background: rgba(9, 9, 13, 0.9);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 18px 16px;
-    }
-
-    .sb-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .sb-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .story-card {
+      margin-top: 6px;
+      font-size: 0.9rem;
       color: var(--text-sub);
-      margin-bottom: 6px;
-    }
-
-    .sb-media {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sb-image-frame {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid rgba(245, 211, 122, 0.16);
-      background: #15151f;
-    }
-
-    .sb-image-frame img {
-      width: 100%;
-      display: block;
     }
 
     /* ===== 聯絡方式 ===== */
@@ -471,11 +438,14 @@
     .contact-card {
       margin-top: 40px;
       text-align: center;
-      background: linear-gradient(145deg, #111119, #050507);
+      background: var(--bg-elevated);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(245, 211, 122, 0.3);
+      border: 1px solid rgba(246, 220, 162, 0.55);
       padding: 20px 18px 18px;
       box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 1;
     }
 
     .contact-card h3 {
@@ -507,6 +477,8 @@
       font-size: 0.75rem;
       text-align: center;
       color: #666680;
+      position: relative;
+      z-index: 1;
     }
 
     @media (max-width: 768px) {
@@ -514,22 +486,16 @@
         padding: 28px 16px 56px;
       }
 
-      .hero {
-        grid-template-columns: 1fr;
-        justify-items: flex-start;
-      }
-
-      .hero-avatar-wrap {
-        width: 80px;
-        height: 80px;
-      }
-
       .intro-section {
         grid-template-columns: 1fr;
       }
 
-      .sb-inner {
-        grid-template-columns: 1fr;
+      .hero-role {
+        font-size: 1.5rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.9rem;
       }
 
       .work-card {
@@ -540,35 +506,31 @@
 </head>
 <body>
   <div class="page">
-
-    <!-- Hero：頭像＋名字＋一句話 -->
-    <header class="hero">
-      <div class="hero-avatar-wrap">
-        <!-- 把你的頭像檔案命名為 airlia-avatar.png 放在同資料夾 -->
-        <img src="airlia-avatar.png" alt="Airlia 頭像">
-      </div>
-      <div class="hero-text">
-        <div class="hero-name">
-          Airlia<span class="alias">／ 放空</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-header">
+        <img src="airlia-avatar.png" alt="Airlia 的頭像" class="hero-avatar">
+        <div class="hero-text">
+          <h1 class="hero-name">Airlia / 放空</h1>
+          <div class="hero-role">
+            <strong>2D 動畫設計師</strong>｜分鏡 × 動態視覺
+          </div>
+          <p class="hero-tagline">
+            專注將抽象概念轉成好理解、好觀看的動畫敘事；接案以明確需求與尊重創意勞動為前提。
+          </p>
         </div>
-        <div class="hero-role">
-          <strong>2D 動畫設計師</strong>｜分鏡 × 動態視覺
-        </div>
-        <p class="hero-tagline">
-          專注將抽象概念轉成好理解、好觀看的動畫敘事，接案以明確需求與尊重創意勞動為前提。
-        </p>
       </div>
-    </header>
+    </section>
 
-    <!-- 自我介紹 ＋ 技能 -->
+    <!-- ABOUT + SKILLS -->
     <section class="intro-section">
       <!-- ABOUT -->
-      <div class="card">
+      <article class="card">
         <div class="card-inner">
-          <h2 class="card-title">
+          <div class="card-title">
             <span class="card-title-dot"></span>
             <span class="card-title-text">ABOUT</span>
-          </h2>
+          </div>
           <p>
             我是 Airlia（放空），自由接案的 2D 動畫師與視覺創作者。擁有超過 8 年市場經驗，曾合作專案包含平台宣傳動畫、品牌形象影片、產品介紹、課程影片與社群動態圖像等。
           </p>
@@ -576,45 +538,44 @@
             我擅長從「文字腳本／需求方向」出發，協助整理資訊結構、發想畫面節奏，用清楚的分鏡與流暢的動態，把顧客想說的話變成觀眾看得懂、看得完的故事。
           </p>
           <div class="tag-row">
-            <span class="tag">2D 動畫設計</span>
+            <span class="tag main">2D 動畫設計</span>
             <span class="tag">分鏡腳本規劃</span>
             <span class="tag">品牌視覺整合</span>
             <span class="tag">社群影音素材</span>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- SKILLS -->
-      <div class="card">
+      <article class="card">
         <div class="card-inner">
-          <h2 class="card-title">
+          <div class="card-title">
             <span class="card-title-dot"></span>
             <span class="card-title-text">SKILLS</span>
-          </h2>
+          </div>
           <ul class="skills-list">
-            <li>平台／品牌宣傳動畫：畫面節奏規劃，資訊分段與轉場設計。</li>
-            <li>分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握。</li>
+            <li>平台／品牌宣傳動畫：畫面節奏規劃、資訊分段與轉場設計</li>
+            <li>分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握</li>
           </ul>
-          <div class="tag-row">
-            <span class="tag">After Effects</span>
-            <span class="tag">Premiere</span>
-            <span class="tag">Photoshop</span>
-            <span class="tag">Illustrator</span>
-            <span class="tag">Clip Studio Paint</span>
+          <div class="tools-row">
+            <span class="tool-chip">After Effects</span>
+            <span class="tool-chip">Premiere</span>
+            <span class="tool-chip">Photoshop</span>
+            <span class="tool-chip">Illustrator</span>
+            <span class="tool-chip">Clip Studio Paint</span>
           </div>
         </div>
-      </div>
+      </article>
     </section>
 
     <!-- 動畫作品 -->
     <div class="section-title">
-      <span class="line"></span>
-      <span>動畫作品</span>
-      <span class="line"></span>
+      <span class="section-title-line"></span>
+      <span class="label">動畫作品</span>
+      <span class="section-title-line"></span>
     </div>
 
     <section class="works-grid">
-
       <!-- HUZU -->
       <article class="work-card">
         <div class="work-inner">
@@ -629,8 +590,7 @@
             </div>
           </div>
           <p class="work-desc">
-            為「HUZU 平台」製作的新型態產學互助平台宣傳影片。從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，
-            目標是在短時間內清楚說明平台運作模式與使用者價值。
+            為「HUZU 平台」製作的新型態產學互助平台宣傳影片。從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚說明平台運作模式與使用者價值。
           </p>
           <div class="video-wrapper">
             <iframe
@@ -664,8 +624,7 @@
             </div>
           </div>
           <p class="work-desc">
-            以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，
-            建立穩定又具有溫度的品牌印象。
+            以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，建立穩定又具有溫度的品牌印象。
           </p>
           <div class="video-wrapper">
             <iframe
@@ -684,7 +643,7 @@
         </div>
       </article>
 
-      <!-- 璽朵批發平台廣告 -->
+      <!-- 璽朵平台廣告 -->
       <article class="work-card">
         <div class="work-inner">
           <div class="work-header">
@@ -692,13 +651,13 @@
               <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
             </div>
             <div class="work-tags">
-              <span>購物平台廣告</span>
-              <span>情境敘事</span>
+              <span>平台廣告</span>
+              <span>角色情境動畫</span>
               <span>2023</span>
             </div>
           </div>
           <p class="work-desc">
-            以生活化情境帶出創業者的掙扎與抉擇，透過角色表情與畫面節奏，強調平台提供的解方與優勢。
+            以日常情境切入，帶出批發平台的痛點與解方。透過角色表情、視線與畫面節奏的設計，加強觀眾代入感與轉換意圖。
           </p>
           <div class="video-wrapper">
             <iframe
@@ -709,83 +668,32 @@
           </div>
           <div class="work-footer">
             <div class="chips">
-              <span class="chip">劇情分鏡</span>
+              <span class="chip">腳本拆解</span>
               <span class="chip">角色動態</span>
+              <span class="chip">社群投放友善版</span>
             </div>
             <span>工具：AI / PS / AE</span>
           </div>
         </div>
       </article>
 
-      <!-- ABS 系統介紹動畫（保留技術向作品） -->
+      <!-- 分鏡說明卡（之後可放圖） -->
       <article class="work-card">
         <div class="work-inner">
           <div class="work-header">
             <div class="work-title">
-              <span class="bracket">【</span>ABS 系統介紹動畫<span class="bracket">】</span>
+              <span class="bracket">【</span>分鏡規劃 × 動畫製作搭配<span class="bracket">】</span>
             </div>
             <div class="work-tags">
-              <span>產品機構示意</span>
-              <span>線條風技術動畫</span>
-              <span>2023</span>
+              <span>分鏡腳本</span>
+              <span>畫面節奏規劃</span>
             </div>
           </div>
-          <p class="work-desc">
-            以線條風與平面構成呈現 ABS 機構運作方式，強調重點零件與安全機制。畫面乾淨俐落，
-            方便觀眾專注在資訊本身，也適合作為教育與展場播放素材。
+          <p class="work-desc story-card">
+            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。若未來你準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
           </p>
-          <div class="video-wrapper">
-            <!-- 若有影片可直接替換連結；這裡先放佔位用連結或留白 -->
-            <iframe
-              src="https://www.youtube.com/embed/WWWWWWWW"
-              title="ABS 系統介紹動畫"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="work-footer">
-            <div class="chips">
-              <span class="chip">技術資訊視覺化</span>
-              <span class="chip">線條動畫</span>
-            </div>
-            <span>工具：AI / AE</span>
-          </div>
         </div>
       </article>
-
-    </section>
-
-    <!-- 分鏡 × 動畫 區 -->
-    <div class="section-title">
-      <span class="line"></span>
-      <span>分鏡 × 動畫</span>
-      <span class="line"></span>
-    </div>
-
-    <section class="storyboard-grid">
-      <!-- HUZU 分鏡＋動畫組合 -->
-      <article class="sb-card">
-        <div class="sb-inner">
-          <div class="sb-media">
-            <div class="sb-label">STORYBOARD</div>
-            <div class="sb-image-frame">
-              <!-- 這裡換成你的分鏡圖。例：huzu-storyboard.jpg -->
-              <img src="huzu-storyboard.jpg" alt="HUZU 平台宣傳動畫 分鏡圖">
-            </div>
-          </div>
-          <div class="sb-media">
-            <div class="sb-label">ANIMATION</div>
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/owZXk7mlcvg"
-                title="HUZU 平台宣傳動畫"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 之後如果要再加其他案子的分鏡＋動畫，只要複製上面 sb-card 改圖、改影片即可 -->
     </section>
 
     <!-- 聯絡方式 -->
