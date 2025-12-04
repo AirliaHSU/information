@@ -1,855 +1,548 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Airlia / 放空｜2D 動畫設計師作品集</title>
-  <meta name="description" content="Airlia / 放空｜專職 2D 動畫設計與視覺創作，擅長分鏡腳本、動畫製作與品牌視覺整合。作品涵蓋平台宣傳動畫、品牌故事影片與資訊圖像。">
-  <meta name="author" content="Airlia / 放空" />
+<style>
+  :root {
+    --bg: #040506;
+    /* 所有卡片的底色：深墨綠 */
+    --bg-elevated: rgba(7, 15, 13, 0.9);
+    --text-main: #f5f5f5;
+    --text-sub: #b8bac4;
 
-  <style>
-    :root {
-      --bg: #040506;
-      --bg-elevated: rgba(11, 11, 18, 0.9);
-      --text-main: #f5f5f5;
-      --text-sub: #b8bac4;
+    /* 暖金 × 深金（只拿來做字與小點綴） */
+    --gold-deep: #7b5b28;
+    --gold-mid:  #b28636;
+    --gold-light:#f2d38c;
+    --gold: var(--gold-light);
 
-      /* 暖金 × 深金 */
-      --gold-deep: #7b5b28;
-      --gold-mid:  #b28636;
-      --gold-light:#f2d38c;
-      --gold: var(--gold-light);
+    --accent-green: #1f3730;
+    --border-soft: #26302c;  /* 邊框也偏綠一點 */
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
+  }
 
-      --accent-green: #1f3730;
-      --border-soft: #262632;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", system-ui,
+      "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #141623 0, #040506 55%);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", system-ui,
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #141623 0, #040506 55%);
-      color: var(--text-main);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  .page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 40px 20px 72px;
+    position: relative;
+    overflow: hidden;
+  }
 
+  /* 左上＋右下淡金光霧 */
+  .page::before,
+  .page::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.45;
+  }
+
+  .page::before {
+    top: -120px;
+    left: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(
+      circle at center,
+      rgba(242, 211, 143, 0.5),
+      rgba(178, 134, 54, 0.1),
+      transparent 70%
+    );
+  }
+
+  .page::after {
+    bottom: -140px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(
+      circle at center,
+      rgba(242, 211, 143, 0.45),
+      rgba(123, 91, 40, 0.12),
+      transparent 72%
+    );
+  }
+
+  /* ===== HERO：頭像＋名字＋短介紹 ===== */
+
+  .hero {
+    max-width: 880px;
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-mid);
+    object-fit: cover;
+    background: #111;
+  }
+
+  .hero-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-role {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin-top: 4px;
+  }
+
+  .hero-role strong {
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    max-width: 640px;
+  }
+
+  /* ===== ABOUT / SKILLS 區 ===== */
+
+  .intro-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+    gap: 24px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card {
+    background: var(--bg-elevated);          /* 深墨綠 */
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);    /* 墨綠邊 */
+    box-shadow: none;
+    padding: 22px 24px 20px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    height: 100%;
+  }
+
+  .card-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  .card-title-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold-mid);
+    flex-shrink: 0;
+  }
+
+  .card-title-text {
+    color: var(--text-main);
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    text-align: justify;
+  }
+
+  .card p + p {
+    margin-top: 6px;
+  }
+
+  .tag-row {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(8, 16, 14, 0.96);
+    border: 1px solid rgba(150, 170, 165, 0.6);
+    color: var(--text-sub);
+    white-space: nowrap;
+  }
+
+  /* Skills 列表 */
+
+  .skills-list {
+    margin-top: 6px;
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--text-sub);
+  }
+
+  .skills-list li {
+    position: relative;
+    padding-left: 14px;
+    margin: 4px 0;
+  }
+
+  .skills-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
+  }
+
+  .tools-row {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tool-chip {
+    font-size: 0.78rem;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: rgba(5, 10, 9, 0.96);
+    border: 1px solid rgba(170, 188, 182, 0.7);
+    color: var(--text-sub);
+  }
+
+  /* ===== Section title ===== */
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 18px;
+    font-size: 0.95rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(123, 91, 40, 0),
+      rgba(178, 134, 54, 0.9),
+      rgba(123, 91, 40, 0)
+    );
+  }
+
+  .section-title span.label {
+    white-space: nowrap;
+  }
+
+  /* ===== 動畫作品：輪播 ===== */
+
+  .works-slider {
+    margin: 8px 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .slider-window {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.6s ease;
+  }
+
+  .works-slider .work-card {
+    flex: 0 0 100%;
+  }
+
+  .slider-dots {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .slider-dot.active {
+    width: 18px;
+    background: var(--gold);
+  }
+
+  /* ===== 作品卡片共用 ===== */
+
+  .works-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .work-card {
+    background: var(--bg-elevated);          /* 深墨綠 */
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);    /* 墨綠描邊 */
+    box-shadow: none;
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+  }
+
+  .work-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .work-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+
+  .work-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .work-title span.bracket {
+    color: var(--gold);
+  }
+
+  .work-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-sub);
+  }
+
+  .work-tags span {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .work-desc {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: radial-gradient(circle at top, #202830, #050707);
+    border: 1px solid rgba(242, 211, 143, 0.26);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .work-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    opacity: 0.85;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .chip {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.78rem;
+  }
+
+  .story-card {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: var(--text-sub);
+  }
+
+  /* ===== CONTACT CARD：改成墨綠方塊＋墨綠線 ===== */
+
+  .contact-card {
+    margin-top: 48px;
+    text-align: left;
+    background: var(--bg-elevated);                  /* 跟其他卡片一致深墨綠 */
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(90, 130, 110, 0.9);       /* 去掉暖金線，改墨綠描邊 */
+    padding: 24px 22px 22px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-card h3 {
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-bottom: 10px;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .contact-highlight {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .contact-highlight span {
+    color: var(--gold-light);
+  }
+
+  .contact-list {
+    list-style: none;
+    margin: 6px 0 14px 0;
+    padding-left: 0;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+
+  .contact-list li {
+    position: relative;
+    padding-left: 16px;
+    margin: 6px 0;
+  }
+
+  .contact-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
+    opacity: 0.9;
+  }
+
+  footer {
+    margin-top: 26px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #666880;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
     .page {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 40px 20px 72px;
-      position: relative;
-      overflow: hidden;
+      padding: 28px 16px 56px;
     }
 
-    /* 左上＋右下淡金光霧 */
-    .page::before,
-    .page::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      opacity: 0.45;
-    }
-
-    .page::before {
-      top: -120px;
-      left: -60px;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(
-        circle at center,
-        rgba(242, 211, 143, 0.5),
-        rgba(178, 134, 54, 0.1),
-        transparent 70%
-      );
-    }
-
-    .page::after {
-      bottom: -140px;
-      right: -80px;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(
-        circle at center,
-        rgba(242, 211, 143, 0.45),
-        rgba(123, 91, 40, 0.12),
-        transparent 72%
-      );
-    }
-
-    /* ===== HERO：頭像＋名字＋短介紹 ===== */
-
-    .hero {
-      max-width: 880px;
-      margin: 0 auto 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .hero-avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      border: 2px solid var(--gold-mid);
-      object-fit: cover;
-      background: #111;
-    }
-
-    .hero-name {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+    .intro-section {
+      grid-template-columns: 1fr;
     }
 
     .hero-role {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      margin-top: 4px;
-    }
-
-    .hero-role strong {
-      color: var(--gold);
+      font-size: 1.5rem;
     }
 
     .hero-tagline {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      max-width: 640px;
-    }
-
-    /* ===== ABOUT / SKILLS 區 ===== */
-
-    .intro-section {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
-      gap: 24px;
-      margin-top: 24px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: none;
-      padding: 22px 24px 20px;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-      height: 100%;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
       font-size: 0.9rem;
-    }
-
-    .card-title-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--gold-mid);
-      flex-shrink: 0;
-    }
-
-    .card-title-text {
-      color: var(--text-main);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      text-align: justify;
-    }
-
-    .card p + p {
-      margin-top: 6px;
-    }
-
-    .tag-row {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(8, 8, 12, 0.95);
-      border: 1px solid rgba(185, 185, 205, 0.45);
-      color: var(--text-sub);
-      white-space: nowrap;
-    }
-
-    /* Skills 列表 */
-
-    .skills-list {
-      margin-top: 6px;
-      list-style: none;
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
-
-    .skills-list li {
-      position: relative;
-      padding-left: 14px;
-      margin: 4px 0;
-    }
-
-    .skills-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
-    }
-
-    .tools-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tool-chip {
-      font-size: 0.78rem;
-      padding: 4px 11px;
-      border-radius: 999px;
-      background: rgba(5, 5, 9, 0.96);
-      border: 1px solid rgba(190, 190, 210, 0.6);
-      color: var(--text-sub);
-    }
-
-    /* ===== Section title ===== */
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 40px 0 18px;
-      font-size: 0.95rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-title-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgba(123, 91, 40, 0),
-        rgba(178, 134, 54, 0.9),
-        rgba(123, 91, 40, 0)
-      );
-    }
-
-    .section-title span.label {
-      white-space: nowrap;
-    }
-
-    /* ===== 動畫作品：輪播 ===== */
-
-    .works-slider {
-      margin: 8px 0 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .slider-window {
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.6s ease;
-    }
-
-    .works-slider .work-card {
-      flex: 0 0 100%;
-    }
-
-    .slider-dots {
-      margin-top: 8px;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .slider-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .slider-dot.active {
-      width: 18px;
-      background: var(--gold);
-    }
-
-    /* ===== 作品卡片共用 ===== */
-
-    .works-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-      position: relative;
-      z-index: 1;
     }
 
     .work-card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: none;
-      padding: 18px 18px 16px;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
+      padding: 16px 14px 14px;
     }
-
-    .work-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .work-header {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: baseline;
-      margin-bottom: 8px;
-    }
-
-    .work-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .work-title span.bracket {
-      color: var(--gold);
-    }
-
-    .work-tags {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 0.75rem;
-      color: var(--text-sub);
-    }
-
-    .work-tags span {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .work-desc {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      margin-bottom: 10px;
-      text-align: justify;
-    }
-
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: radial-gradient(circle at top, #202030, #050507);
-      border: 1px solid rgba(242, 211, 143, 0.26);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .work-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      opacity: 0.85;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.78rem;
-    }
-
-    .story-card {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
-
-    /* ===== CONTACT CARD （深墨綠微透明 + 金邊＋條列） ===== */
-
-    .contact-card {
-      margin-top: 48px;
-      text-align: left;
-      background: rgba(10, 18, 14, 0.35);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(246, 220, 162, 0.55);
-      padding: 24px 22px 22px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-      position: relative;
-      z-index: 1;
-    }
-
-    .contact-card h3 {
-      font-size: 0.95rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 14px;
-    }
-
-    .contact-card p {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      margin-bottom: 10px;
-      line-height: 1.7;
-      text-align: justify;
-    }
-
-    .contact-highlight {
-      margin-top: 14px;
-      font-size: 0.95rem;
-      color: var(--text-main);
-      font-weight: 500;
-      text-align: center;
-    }
-
-    .contact-highlight span {
-      color: var(--gold-light);
-    }
-
-    .contact-list {
-      list-style: none;
-      margin: 6px 0 14px 0;
-      padding-left: 0;
-      color: var(--text-sub);
-      line-height: 1.7;
-    }
-
-    .contact-list li {
-      position: relative;
-      padding-left: 16px;
-      margin: 6px 0;
-    }
-
-    .contact-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 26px;
-      font-size: 0.75rem;
-      text-align: center;
-      color: #666880;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 28px 16px 56px;
-      }
-
-      .intro-section {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-role {
-        font-size: 1.5rem;
-      }
-
-      .hero-tagline {
-        font-size: 0.9rem;
-      }
-
-      .work-card {
-        padding: 16px 14px 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-header">
-        <img src="airlia-avatar.png" alt="Airlia 的頭像" class="hero-avatar">
-        <div class="hero-text">
-          <h1 class="hero-name">Airlia / 放空</h1>
-          <div class="hero-role">
-            <strong>2D 動畫設計師</strong>｜分鏡 × 動態視覺
-          </div>
-          <p class="hero-tagline">
-            專注將抽象概念轉成好理解、好觀看的動畫敘事；接案以明確需求與尊重創意勞動為前提。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT + SKILLS -->
-    <section class="intro-section">
-      <!-- ABOUT -->
-      <article class="card">
-        <div class="card-inner">
-          <div class="card-title">
-            <span class="card-title-dot"></span>
-            <span class="card-title-text">ABOUT</span>
-          </div>
-          <p>
-            嗨，我是 Airlia（放空），一位自由接案的 2D 動畫設計師。擁有 8 年以上的動畫與視覺整合經驗，合作內容包含平台宣傳動畫、品牌形象影片、產品視覺化與課程影片等。
-          </p>
-          <p>
-            我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、也更好觀看。希望每支動畫都能精準傳遞核心訊息，並讓觀眾自然地看下去。
-          </p>
-          <div class="tag-row">
-            <span class="tag">2D 動畫設計</span>
-            <span class="tag">分鏡腳本規劃</span>
-            <span class="tag">品牌視覺整合</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- SKILLS -->
-      <article class="card">
-        <div class="card-inner">
-          <div class="card-title">
-            <span class="card-title-dot"></span>
-            <span class="card-title-text">SKILLS</span>
-          </div>
-          <ul class="skills-list">
-            <li>平台／品牌宣傳動畫：畫面節奏規劃、資訊分段與轉場設計</li>
-            <li>分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握</li>
-          </ul>
-          <div class="tools-row">
-            <span class="tool-chip">After Effects</span>
-            <span class="tool-chip">Premiere</span>
-            <span class="tool-chip">Photoshop</span>
-            <span class="tool-chip">Illustrator</span>
-            <span class="tool-chip">Clip Studio Paint</span>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- ===== 動畫作品（輪播） ===== -->
-    <div class="section-title">
-      <span class="section-title-line"></span>
-      <span class="label">動畫作品</span>
-      <span class="section-title-line"></span>
-    </div>
-
-    <section class="works-slider">
-      <div class="slider-window">
-        <div class="slider-track">
-          <!-- Slide 1：HUZU -->
-          <article class="work-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>平台宣傳</span>
-                  <span>分鏡＋全流程動畫</span>
-                  <span>2025</span>
-                </div>
-              </div>
-              <p class="work-desc">
-                為「HUZU 平台」製作的新型態產學互助平台宣傳影片。
-                從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚、易懂地說明平台運作模式與使用者價值。
-              </p>
-              <p class="work-desc">
-                製作過程中，也善用 AI（ChatGPT）協助整理內容概念與初版草稿，再進一步轉化為適合動畫呈現的畫面節奏與視覺敘事，
-                大幅提升了資訊溝通效率與腳本討論品質。
-              </p>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/owZXk7mlcvg"
-                  title="HUZU 平台宣傳動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="work-footer">
-                <div class="chips">
-                  <span class="chip">分鏡設計</span>
-                  <span class="chip">資訊結構整理</span>
-                  <span class="chip">角色與場景動態</span>
-                  <span class="chip">AI 協作（ChatGPT）</span>
-                </div>
-                <span>工具：AI / PS / AE / PR</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 2：Holly Hair -->
-          <article class="work-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>品牌形象</span>
-                  <span>核心概念轉譯</span>
-                  <span>2024</span>
-                </div>
-              </div>
-              <p class="work-desc">
-                以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，
-                建立穩定又具有溫度的品牌印象。
-              </p>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/EHiU6NXAqSo"
-                  title="Holly Hair 品牌核心動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="work-footer">
-                <div class="chips">
-                  <span class="chip">品牌視覺統整</span>
-                  <span class="chip">動態設計</span>
-                </div>
-                <span>工具：AI / PS / AE</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Slide 3：璽朵平台 -->
-          <article class="work-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>平台廣告</span>
-                  <span>角色情境動畫</span>
-                  <span>2023</span>
-                </div>
-              </div>
-              <p class="work-desc">
-                以日常情境切入，帶出批發平台的痛點與解方。透過角色表情、視線與畫面節奏的設計，加強觀眾代入感與轉換意圖。
-              </p>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/wmJIkAjpgsQ"
-                  title="璽朵批發平台廣告 動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="work-footer">
-                <div class="chips">
-                  <span class="chip">腳本拆解</span>
-                  <span class="chip">角色動態</span>
-                  <span class="chip">社群投放友善版</span>
-                </div>
-                <span>工具：AI / PS / AE</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="slider-dots">
-        <button class="slider-dot active" data-index="0" aria-label="第一支動畫"></button>
-        <button class="slider-dot" data-index="1" aria-label="第二支動畫"></button>
-        <button class="slider-dot" data-index="2" aria-label="第三支動畫"></button>
-      </div>
-    </section>
-
-    <!-- ===== 分鏡設計作品 ===== -->
-    <div class="section-title" style="margin-top: 40px;">
-      <span class="section-title-line"></span>
-      <span class="label">分鏡設計作品</span>
-      <span class="section-title-line"></span>
-    </div>
-
-    <section class="works-grid">
-      <!-- 分鏡卡片 -->
-      <article class="work-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>分鏡規劃 × 動畫製作搭配<span class="bracket">】</span>
-            </div>
-            <div class="work-tags">
-              <span>分鏡腳本</span>
-              <span>畫面節奏規劃</span>
-            </div>
-          </div>
-          <p class="work-desc story-card">
-            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。
-            未來準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <!-- 聯絡方式 -->
-    <section class="contact-card">
-      <h3>CONTACT</h3>
-
-      <p>目前主要以自由接案方式合作，專注於 2D 動畫與分鏡相關專案。</p>
-
-      <p>若你有想討論的案子，來信時可以一併提供：</p>
-
-      <ul class="contact-list">
-        <li>影片預估長度（如 30 秒、60 秒）</li>
-        <li>想呈現的內容或文字腳本（越明確越省時）</li>
-        <li>1～2 個風格參考連結（避免方向過散）</li>
-        <li>（若有配音需求）請提供最終配音檔案，才能安排畫面節奏</li>
-      </ul>
-
-      <p>
-        收到需求後，我會回覆正式報價與製作規劃（含流程、時程與付款安排），讓合作方式清楚又安心。
-      </p>
-
-      <p class="contact-highlight">
-        E-mail：<span>tryit308793@gmail.com</span>
-      </p>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Airlia / 放空．2D 動畫與視覺創作
-    </footer>
-  </div>
-
-  <script>
-    // footer 年份
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ===== 動畫作品輪播 =====
-    const track = document.querySelector(".slider-track");
-    const slides = Array.from(document.querySelectorAll(".works-slider .work-card"));
-    const dots = Array.from(document.querySelectorAll(".slider-dot"));
-
-    let current = 0;
-    const total = slides.length;
-    let timer;
-
-    function goTo(index) {
-      if (!track) return;
-      current = (index + total) % total;
-      const offset = -current * 100;
-      track.style.transform = `translateX(${offset}%)`;
-      dots.forEach((d, i) => d.classList.toggle("active", i === current));
-    }
-
-    function next() {
-      goTo(current + 1);
-    }
-
-    function start() {
-      if (total <= 1) return;
-      timer = setInterval(next, 10000); // 10 秒換一次
-    }
-
-    function restart() {
-      if (!timer) return;
-      clearInterval(timer);
-      start();
-    }
-
-    dots.forEach(dot => {
-      dot.addEventListener("click", () => {
-        const idx = Number(dot.dataset.index || 0);
-        goTo(idx);
-        restart();
-      });
-    });
-
-    if (track && total > 1) {
-      goTo(0);
-      start();
-    }
-  </script>
-</body>
-</html>
+  }
+</style>
