@@ -146,6 +146,74 @@
     }
 
     /* ===== ABOUT / SKILLS 區 ===== */
+/* ===== CONTACT CARD （深墨綠微透明 + 金邊）===== */
+
+.contact-card {
+  margin-top: 48px;
+  text-align: left;
+  background: rgba(10, 18, 14, 0.35); /* 微透明深墨綠 */
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(246, 220, 162, 0.55); /* 暖金框 */
+  padding: 24px 22px 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card h3 {
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 14px;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.contact-highlight {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.contact-highlight span {
+  color: var(--gold-light);
+}
+
+/* ===== CONTACT 列表（與 SKILLS 金點一致） ===== */
+
+.contact-list {
+  list-style: none;
+  margin: 6px 0 14px 0;
+  padding-left: 0;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.contact-list li {
+  position: relative;
+  padding-left: 16px;
+  margin: 6px 0;
+}
+
+.contact-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
+  opacity: 0.9;
+}
 
     .intro-section {
       display: grid;
@@ -746,23 +814,28 @@
     </section>
 
     <!-- 聯絡方式 -->
-    <section class="contact-card">
-      <h3>CONTACT</h3>
-    <p>
-目前主要以自由接案方式合作，專注於 2D 動畫與分鏡相關專案。
-</p>
+<style>">
+  <h3>CONTACT</h3>
 
-<p>若你有想討論的案子，來信時可以一併提供：</p>
-<ul style="text-align:left; margin: 8px 0 14px 0; padding-left: 20px; color: var(--text-sub); line-height:1.7;">
-  <li>影片預估長度（例如 30 秒、60 秒）</li>
-  <li>想呈現的內容或文字腳本</li>
-  <li>1～2 個風格參考連結</li>
-  <li>（若有配音需求）請提供最終配音檔案，方便安排動畫節奏</li>
-</ul>
+  <p>目前主要以自由接案方式合作，專注於 2D 動畫與分鏡相關專案。</p>
 
-<p>
-收到需求後，我會提供正式的報價與製作規劃（含時程、流程與付款節點），讓合作方式清楚又安心。
-</p>
+  <p>若你有想討論的案子，來信時可以一併提供：</p>
+
+  <ul class="contact-list">
+    <li>影片預估長度（如 30 秒、60 秒）</li>
+    <li>想呈現的內容或文字腳本（越明確越省時）</li>
+    <li>1～2 個風格參考連結（避免方向過散）</li>
+    <li>（若有配音需求）請提供最終配音檔案，才能安排畫面節奏</li>
+  </ul>
+
+  <p>
+    收到需求後，我會回覆正式報價與製作規劃（含流程、時程與付款安排），讓合作方式清楚又安心。
+  </p>
+
+  <p class="contact-highlight">
+    E-mail：<span>tryit308793@gmail.com</span>
+  </p>
+</section>
 
       <p class="contact-highlight">
         E-mail：<span>tryit308793@gmail.com</span>
