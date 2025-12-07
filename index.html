@@ -355,119 +355,35 @@
       width: 18px;
       background: var(--gold);
     }
-<!-- 分鏡設計作品區塊（請放在 LOGO 動畫區塊的上面） -->
-<section id="storyboard-section" class="portfolio-section">
-  <div class="section-header">
-    <p class="section-subtitle">Storyboard & Animation</p>
-    <h2 class="section-title">分鏡設計作品</h2>
-  </div>
+    /* ===== Storyboard 區塊樣式 ===== */
 
-  <div class="storyboard-card hover-card">
-    <p class="storyboard-description">
-      透過分鏡規劃，先將腳本與畫面節奏視覺化，再進入正式動畫製作。
-      下方範例展示不同類型專案中，從畫面構圖、敘事節奏到情緒鋪陳的前期設計成果。
-    </p>
+    .storyboard-block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 8px;
+    }
 
-    <!-- Showcase 01 -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-01.png"
-        alt="Storyboard Showcase 01 – 科技平台使用情境"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 01：科技平台使用情境（HUZU 專案）</h3>
-      <p class="storyboard-description">
-        呈現平台服務流程與使用者操作情境，將抽象的產品功能轉換為清楚易懂的畫面節奏，方便與客戶對齊溝通。
-      </p>
-    </article>
+    .storyboard-shot img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
 
-    <!-- Showcase 02 -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-02.png"
-        alt="Storyboard Showcase 02 – 政府與公共敘事動畫"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 02：政府／文化敘事動畫</h3>
-      <p class="storyboard-description">
-        以城市、建築與節慶活動為主題，規劃多場景轉場與敘事節奏，用分鏡先確認鏡頭設計與視覺重點，再進入正式動畫製作。
-      </p>
-    </article>
+    .storyboard-shot-text {
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-sub);
+    }
 
-    <!-- Showcase 03 -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-03.png"
-        alt="Storyboard Showcase 03 – 角色情緒與故事推進"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 03：角色情緒 × 故事敘事</h3>
-      <p class="storyboard-description">
-        透過夕陽場景與角色姿態變化，規劃「起－承－轉－合」的故事節奏，強調情緒氛圍與畫面流動感，是敘事型專案的重要前期步驟。
-      </p>
-    </article>
-  </div>
-</section>
-<!-- ==================== 分鏡設計作品區塊 START ==================== -->
-<section id="storyboard-section" class="portfolio-section">
+    .storyboard-shot-text strong {
+      color: var(--text-main);
+      font-size: 0.92rem;
+    }
 
-  <div class="section-header">
-    <p class="section-subtitle">Storyboard & Animation</p>
-    <h2 class="section-title">分鏡設計作品</h2>
-  </div>
-
-  <div class="storyboard-card hover-card">
-
-    <p class="storyboard-intro">
-      透過分鏡把腳本、構圖與畫面節奏視覺化，是動畫正式製作前最重要的一步。
-      下方展示三組不同類型的分鏡，包含產品敘事、公共議題及情緒故事推進。
-    </p>
-
-    <!-- ===== Showcase 01 ===== -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-01.png"
-        alt="Storyboard Showcase 01 – 科技平台使用情境"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 01：科技平台使用情境（HUZU 專案）</h3>
-      <p class="storyboard-description">
-        呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。
-      </p>
-    </article>
-
-    <!-- ===== Showcase 02 ===== -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-02.png"
-        alt="Storyboard Showcase 02 – 政府與公共敘事動畫"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 02：政府／文化敘事動畫</h3>
-      <p class="storyboard-description">
-        以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。
-      </p>
-    </article>
-
-    <!-- ===== Showcase 03 ===== -->
-    <article class="storyboard-item">
-      <img
-        src="images/sb-03.png"
-        alt="Storyboard Showcase 03 – 角色情緒與故事推進"
-        class="storyboard-image"
-      />
-      <h3 class="storyboard-title">分鏡展示 03：角色情緒 × 故事敘事</h3>
-      <p class="storyboard-description">
-        以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
-      </p>
-    </article>
-
-  </div>
-</section>
-<!-- ==================== 分鏡設計作品區塊 END ==================== -->
-
-    
     /* ===== 作品卡片共用 ===== */
+
 /* ===== LOGO 動畫區（3 欄縮圖）===== */
 
 .logo-grid {
@@ -985,23 +901,60 @@
       <span class="section-title-line"></span>
     </div>
 
-    <section class="works-grid">
+       <section class="works-grid">
       <!-- 分鏡卡片 -->
       <article class="work-card hover-raise">
         <div class="work-inner">
           <div class="work-header">
             <div class="work-title">
-              <span class="bracket">【</span>分鏡規劃 × 動畫製作搭配<span class="bracket">】</span>
+              <span class="bracket">【</span>分鏡規劃 × 動畫設計搭配<span class="bracket">】</span>
             </div>
             <div class="work-tags">
               <span>分鏡腳本</span>
               <span>畫面節奏規劃</span>
             </div>
           </div>
-          <p class="work-desc story-card">
-            此區可放專案的分鏡圖縮圖（例如 HUZU 或其他作品），左側為分鏡格線、右側為對應完成畫面。
-            未來準備好分鏡 JPG／PNG，只要把這張卡片改成圖片＋簡短說明即可。
-          </p>
+
+          <!-- 這裡是三組分鏡展示 -->
+          <div class="storyboard-block">
+
+            <!-- 分鏡展示 01 -->
+            <div class="storyboard-shot">
+              <img
+                src="images/sb-01.png"
+                alt="分鏡展示 01：科技平台使用情境（HUZU 專案）"
+              />
+              <p class="storyboard-shot-text">
+                <strong>分鏡展示 01：科技平台使用情境（HUZU 專案）</strong><br>
+                呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。
+              </p>
+            </div>
+
+            <!-- 分鏡展示 02 -->
+            <div class="storyboard-shot">
+              <img
+                src="images/sb-02.png"
+                alt="分鏡展示 02：政府／文化敘事動畫"
+              />
+              <p class="storyboard-shot-text">
+                <strong>分鏡展示 02：政府／文化敘事動畫</strong><br>
+                以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。
+              </p>
+            </div>
+
+            <!-- 分鏡展示 03 -->
+            <div class="storyboard-shot">
+              <img
+                src="images/sb-03.png"
+                alt="分鏡展示 03：角色情緒 × 故事敘事"
+              />
+              <p class="storyboard-shot-text">
+                <strong>分鏡展示 03：角色情緒 × 故事敘事</strong><br>
+                以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
+              </p>
+            </div>
+
+          </div>
         </div>
       </article>
     </section>
