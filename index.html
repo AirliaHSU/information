@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Airlia / 放空｜2D 動畫設計師作品集</title>
-  <meta name="description" content="Airlia / 放空｜專職 2D 動畫設計與視覺創作，擅長分鏡腳本、動畫製作與品牌視覺整合。作品涵蓋平台宣傳動畫、品牌故事影片與資訊圖像。">
+  <meta
+    name="description"
+    content="Airlia / 放空｜專職 2D 動畫設計與視覺創作，擅長分鏡腳本、動畫製作與品牌視覺整合。作品涵蓋平台宣傳動畫、品牌故事影片與資訊圖像。"
+  />
   <meta name="author" content="Airlia / 放空" />
 
   <style>
@@ -90,9 +93,10 @@
       );
     }
 
-    /* ===== 通用 hover 動效：微亮＋微放大 ===== */
+    /* ===== 通用 hover 動效 ===== */
 
-    .hover-raise {
+    .hover-raise,
+    .hover-card {
       transition:
         transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
         box-shadow 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -100,10 +104,12 @@
         border-color 0.25s ease;
     }
 
-    .hover-raise:hover {
+    .hover-raise:hover,
+    .hover-card:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
-      background: radial-gradient(circle at top left,
+      background: radial-gradient(
+        circle at top left,
         rgba(242, 211, 143, 0.08),
         rgba(9, 16, 12, 0.98)
       );
@@ -355,60 +361,27 @@
       width: 18px;
       background: var(--gold);
     }
-    /* ===== Storyboard 區塊樣式 ===== */
 
-    .storyboard-block {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 8px;
+    /* ===== LOGO 動畫區（3 欄）===== */
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    .storyboard-shot img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
+    .logo-card .work-title {
+      font-size: 0.95rem;
     }
 
-    .storyboard-shot-text {
-      margin: 8px 0 0;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-sub);
+    .logo-card .work-tags {
+      font-size: 0.75rem;
     }
 
-    .storyboard-shot-text strong {
-      color: var(--text-main);
-      font-size: 0.92rem;
-    }
+    /* ===== 共用作品卡片樣式 ===== */
 
-    /* ===== 作品卡片共用 ===== */
-
-/* ===== LOGO 動畫區（3 欄縮圖）===== */
-
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  position: relative;
-  z-index: 1;
-}
-
-.logo-card .work-title {
-  font-size: 0.95rem;
-}
-
-.logo-card .work-tags {
-  font-size: 0.75rem;
-}
-
-@media (max-width: 768px) {
-  .logo-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-    
     .works-grid {
       display: flex;
       flex-direction: column;
@@ -523,6 +496,33 @@
       color: var(--text-sub);
     }
 
+    /* ===== 分鏡區塊：三張圖 ===== */
+
+    .storyboard-block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .storyboard-shot img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .storyboard-shot-text {
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-sub);
+    }
+
+    .storyboard-shot-text strong {
+      color: var(--text-main);
+      font-size: 0.92rem;
+    }
+
     /* ===== 聯絡方式 ===== */
 
     .contact-card {
@@ -598,6 +598,8 @@
       z-index: 1;
     }
 
+    /* ===== RWD ===== */
+
     @media (max-width: 768px) {
       .page {
         padding: 28px 16px 56px;
@@ -617,6 +619,10 @@
 
       .work-card {
         padding: 16px 14px 14px;
+      }
+
+      .logo-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -810,7 +816,6 @@
         <button class="slider-dot" data-index="2" aria-label="第三支動畫"></button>
       </div>
     </section>
-    </section>
 
     <!-- ===== LOGO 動畫 ===== -->
     <div class="section-title" style="margin-top: 40px;">
@@ -894,7 +899,7 @@
       <span class="section-title-line"></span>
     </div>
 
-       <section class="works-grid">
+    <section class="works-grid">
       <!-- 分鏡卡片 -->
       <article class="work-card hover-raise">
         <div class="work-inner">
@@ -908,9 +913,7 @@
             </div>
           </div>
 
-          <!-- 這裡是三組分鏡展示 -->
           <div class="storyboard-block">
-
             <!-- 分鏡展示 01 -->
             <div class="storyboard-shot">
               <img
@@ -946,7 +949,6 @@
                 以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
               </p>
             </div>
-
           </div>
         </div>
       </article>
