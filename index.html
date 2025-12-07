@@ -93,7 +93,7 @@
       );
     }
 
-    /* ===== 通用 hover 動效 ===== */
+    /* ===== 通用 hover 動效（含夜光線條） ===== */
 
     .hover-raise,
     .hover-card {
@@ -107,13 +107,17 @@
     .hover-raise:hover,
     .hover-card:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      /* 夜光感 box-shadow：外層金色光暈 + 下方陰影 */
+      box-shadow:
+        0 0 0 1px rgba(242, 211, 143, 0.55),
+        0 0 18px rgba(242, 211, 143, 0.45),
+        0 18px 45px rgba(0, 0, 0, 0.7);
       background: radial-gradient(
         circle at top left,
         rgba(242, 211, 143, 0.08),
         rgba(9, 16, 12, 0.98)
       );
-      border-color: rgba(242, 211, 143, 0.55);
+      border-color: rgba(242, 211, 143, 0.85);
     }
 
     /* ===== HERO：頭像＋名字＋短介紹 ===== */
@@ -319,7 +323,7 @@
       white-space: nowrap;
     }
 
-    /* ===== 動畫作品：輪播 ===== */
+    /* ===== 動畫作品：輪播（上方主作品區） ===== */
 
     .works-slider {
       margin: 8px 0 16px;
@@ -362,14 +366,47 @@
       background: var(--gold);
     }
 
-    /* ===== LOGO 動畫區（3 欄）===== */
+    /* ===== LOGO 動畫區：Carousel 版本 ===== */
 
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .logo-slider {
+      margin: 8px 0 8px;
       position: relative;
       z-index: 1;
+    }
+
+    .logo-slider-window {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .logo-slider-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .logo-slider .logo-card {
+      flex: 0 0 100%;  /* 一次顯示一張（桌機＆手機都一致） */
+    }
+
+    .logo-slider-dots {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .logo-slider-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .logo-slider-dot.active {
+      width: 16px;
+      background: var(--gold);
     }
 
     .logo-card .work-title {
@@ -598,7 +635,7 @@
       z-index: 1;
     }
 
-    /* ===== RWD ===== */
+    /* ===== RWD 手機優化 ===== */
 
     @media (max-width: 768px) {
       .page {
@@ -621,8 +658,9 @@
         padding: 16px 14px 14px;
       }
 
-      .logo-grid {
-        grid-template-columns: 1fr;
+      /* LOGO Carousel：手機一排一個（其實桌機也是，但手機更需要） */
+      .logo-slider .logo-card {
+        flex: 0 0 100%;
       }
     }
   </style>
@@ -817,79 +855,89 @@
       </div>
     </section>
 
-    <!-- ===== LOGO 動畫 ===== -->
+    <!-- ===== LOGO 動畫（Carousel） ===== -->
     <div class="section-title" style="margin-top: 40px;">
       <span class="section-title-line"></span>
       <span class="label">LOGO 動畫</span>
       <span class="section-title-line"></span>
     </div>
 
-    <section class="logo-grid">
-      <!-- LOGO 1 -->
-     <article class="work-card hover-raise logo-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>品牌 LOGO 動畫 01<span class="bracket">】</span>
+    <section class="logo-slider">
+      <div class="logo-slider-window">
+        <div class="logo-slider-track">
+          <!-- LOGO 1 -->
+          <article class="work-card hover-card logo-card">
+            <div class="work-inner">
+              <div class="work-header">
+                <div class="work-title">
+                  <span class="bracket">【</span>品牌 LOGO 動畫 01<span class="bracket">】</span>
+                </div>
+                <div class="work-tags">
+                  <span>Logo Reveal</span>
+                  <span>動態識別</span>
+                </div>
+              </div>
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/v9HxXCU7ZfY"
+                  title="品牌 LOGO 動畫 01"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-            <div class="work-tags">
-              <span>Logo Reveal</span>
-              <span>動態識別</span>
-            </div>
-          </div>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/v9HxXCU7ZfY"
-              title="品牌 LOGO 動畫 01"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <!-- LOGO 2 -->
-     <article class="work-card hover-raise logo-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>品牌 LOGO 動畫 02<span class="bracket">】</span>
+          <!-- LOGO 2 -->
+          <article class="work-card hover-card logo-card">
+            <div class="work-inner">
+              <div class="work-header">
+                <div class="work-title">
+                  <span class="bracket">【</span>品牌 LOGO 動畫 02<span class="bracket">】</span>
+                </div>
+                <div class="work-tags">
+                  <span>Logo Reveal</span>
+                  <span>光影動態</span>
+                </div>
+              </div>
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/br1mqqqbxuI"
+                  title="品牌 LOGO 動畫 02"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-            <div class="work-tags">
-              <span>Logo Reveal</span>
-              <span>光影動態</span>
-            </div>
-          </div>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/br1mqqqbxuI"
-              title="品牌 LOGO 動畫 02"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <!-- LOGO 3 -->
-     <article class="work-card hover-raise logo-card">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>品牌 LOGO 動畫 03<span class="bracket">】</span>
+          <!-- LOGO 3 -->
+          <article class="work-card hover-card logo-card">
+            <div class="work-inner">
+              <div class="work-header">
+                <div class="work-title">
+                  <span class="bracket">【</span>品牌 LOGO 動畫 03<span class="bracket">】</span>
+                </div>
+                <div class="work-tags">
+                  <span>Logo Reveal</span>
+                  <span>簡潔轉場</span>
+                </div>
+              </div>
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/An8EDp59dfY"
+                  title="品牌 LOGO 動畫 03"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-            <div class="work-tags">
-              <span>Logo Reveal</span>
-              <span>簡潔轉場</span>
-            </div>
-          </div>
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/An8EDp59dfY"
-              title="品牌 LOGO 動畫 03"
-              allowfullscreen
-            ></iframe>
-          </div>
+          </article>
         </div>
-      </article>
+      </div>
+
+      <div class="logo-slider-dots">
+        <button class="logo-slider-dot active" data-index="0" aria-label="第一個 LOGO"></button>
+        <button class="logo-slider-dot" data-index="1" aria-label="第二個 LOGO"></button>
+        <button class="logo-slider-dot" data-index="2" aria-label="第三個 LOGO"></button>
+      </div>
     </section>
 
     <!-- ===== 分鏡設計作品 ===== -->
@@ -985,7 +1033,7 @@
     // footer 年份
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ===== 動畫作品輪播 =====
+    // ===== 動畫作品輪播（上半部） =====
     const track = document.querySelector(".slider-track");
     const slides = Array.from(document.querySelectorAll(".works-slider .work-card"));
     const dots = Array.from(document.querySelectorAll(".slider-dot"));
@@ -1028,6 +1076,51 @@
     if (track && total > 1) {
       goTo(0);
       start();
+    }
+
+    // ===== LOGO 區 Carousel =====
+    const logoTrack = document.querySelector(".logo-slider-track");
+    const logoSlides = Array.from(document.querySelectorAll(".logo-slider .logo-card"));
+    const logoDots = Array.from(document.querySelectorAll(".logo-slider-dot"));
+
+    let logoCurrent = 0;
+    const logoTotal = logoSlides.length;
+    let logoTimer;
+
+    function goToLogo(index) {
+      if (!logoTrack) return;
+      logoCurrent = (index + logoTotal) % logoTotal;
+      const offset = -logoCurrent * 100;
+      logoTrack.style.transform = `translateX(${offset}%)`;
+      logoDots.forEach((d, i) => d.classList.toggle("active", i === logoCurrent));
+    }
+
+    function nextLogo() {
+      goToLogo(logoCurrent + 1);
+    }
+
+    function startLogo() {
+      if (logoTotal <= 1) return;
+      logoTimer = setInterval(nextLogo, 9000); // 約 9 秒換一個 LOGO
+    }
+
+    function restartLogo() {
+      if (!logoTimer) return;
+      clearInterval(logoTimer);
+      startLogo();
+    }
+
+    logoDots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        const idx = Number(dot.dataset.index || 0);
+        goToLogo(idx);
+        restartLogo();
+      });
+    });
+
+    if (logoTrack && logoTotal > 1) {
+      goToLogo(0);
+      startLogo();
     }
   </script>
 </body>
