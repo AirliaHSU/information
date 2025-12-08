@@ -4,30 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Airlia / 放空｜2D 動畫設計師作品集</title>
-  <meta
-    name="description"
-    content="Airlia / 放空｜專職 2D 動畫設計與視覺創作，擅長分鏡腳本、動畫製作與品牌視覺整合。作品涵蓋平台宣傳動畫、品牌故事影片與資訊圖像。"
-  />
+  <meta name="description" content="Airlia / 放空｜專職 2D 動畫設計與視覺創作，擅長分鏡腳本、動畫製作與品牌視覺整合。作品涵蓋平台宣傳動畫、品牌故事影片與資訊圖像。">
   <meta name="author" content="Airlia / 放空" />
 
   <style>
-    /* 作品標題：框亮金，文字深金 */
-.work-title {
-  color: var(--gold-mid);        /* 標題文字：深金色 */
-  font-weight: 600;
-}
-
-.work-title span.bracket {
-  color: var(--gold-light);      /* 【 】使用亮金色 */
-}
-
     :root {
       --bg: #040506;
-      --bg-elevated: rgba(9, 16, 12, 0.94);   /* 深墨綠偏黑的卡片底 */
+      --bg-elevated: rgba(9, 16, 12, 0.94);
       --text-main: #f5f5f5;
       --text-sub: #b8bac4;
 
-      /* 暖金色系 */
       --gold-deep: #7b5b28;
       --gold-mid:  #b28636;
       --gold-light:#f2d38c;
@@ -67,7 +53,6 @@
       overflow: hidden;
     }
 
-    /* 左上＋右下淡金光霧 */
     .page::before,
     .page::after {
       content: "";
@@ -103,10 +88,9 @@
       );
     }
 
-    /* ===== 通用 hover 動效（含夜光線條） ===== */
+    /* ===== 通用 hover 動效 ===== */
 
-    .hover-raise,
-    .hover-card {
+    .hover-raise {
       transition:
         transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
         box-shadow 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -114,23 +98,17 @@
         border-color 0.25s ease;
     }
 
-    .hover-raise:hover,
-    .hover-card:hover {
+    .hover-raise:hover {
       transform: translateY(-3px) scale(1.02);
-      /* 夜光感 box-shadow：外層金色光暈 + 下方陰影 */
-      box-shadow:
-        0 0 0 1px rgba(242, 211, 143, 0.55),
-        0 0 18px rgba(242, 211, 143, 0.45),
-        0 18px 45px rgba(0, 0, 0, 0.7);
-      background: radial-gradient(
-        circle at top left,
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      background: radial-gradient(circle at top left,
         rgba(242, 211, 143, 0.08),
         rgba(9, 16, 12, 0.98)
       );
-      border-color: rgba(242, 211, 143, 0.85);
+      border-color: rgba(242, 211, 143, 0.55);
     }
 
-    /* ===== HERO：頭像＋名字＋短介紹 ===== */
+    /* ===== HERO ===== */
 
     .hero {
       max-width: 880px;
@@ -184,7 +162,7 @@
       max-width: 640px;
     }
 
-    /* ===== ABOUT / SKILLS 區 ===== */
+    /* ===== ABOUT / SKILLS ===== */
 
     .intro-section {
       display: grid;
@@ -333,7 +311,7 @@
       white-space: nowrap;
     }
 
-    /* ===== 動畫作品：輪播（上方主作品區） ===== */
+    /* ===== 動畫作品：輪播 ===== */
 
     .works-slider {
       margin: 8px 0 16px;
@@ -376,58 +354,7 @@
       background: var(--gold);
     }
 
-    /* ===== LOGO 動畫區：Carousel 版本 ===== */
-
-    .logo-slider {
-      margin: 8px 0 8px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-slider-window {
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-    }
-
-    .logo-slider-track {
-      display: flex;
-      transition: transform 0.6s ease;
-    }
-
-    .logo-slider .logo-card {
-      flex: 0 0 100%;  /* 一次顯示一張（桌機＆手機都一致） */
-    }
-
-    .logo-slider-dots {
-      margin-top: 8px;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .logo-slider-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .logo-slider-dot.active {
-      width: 16px;
-      background: var(--gold);
-    }
-
-    .logo-card .work-title {
-      font-size: 0.95rem;
-    }
-
-    .logo-card .work-tags {
-      font-size: 0.75rem;
-    }
-
-    /* ===== 共用作品卡片樣式 ===== */
+    /* ===== 作品卡片共用 ===== */
 
     .works-grid {
       display: flex;
@@ -464,10 +391,11 @@
     .work-title {
       font-size: 1rem;
       font-weight: 600;
+      color: var(--gold-mid);   /* 深金文字 */
     }
 
     .work-title span.bracket {
-      color: var(--gold);
+      color: var(--gold-light); /* 亮金括號【】*/
     }
 
     .work-tags {
@@ -537,37 +465,85 @@
       font-size: 0.78rem;
     }
 
-    .story-card {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--text-sub);
+    /* ===== LOGO 動畫區 ===== */
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ===== 分鏡區塊：三張圖 ===== */
+    .logo-card .work-title {
+      font-size: 0.95rem;
+    }
 
-    .storyboard-block {
+    .logo-card .work-tags {
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== 分鏡設計作品區 ===== */
+
+    .storyboard-section {
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      margin-top: 8px;
+      gap: 32px;
+      margin-top: 20px;
     }
 
-    .storyboard-shot img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
+    .storyboard-block {
+      background: var(--bg-elevated);
+      padding: 22px 24px 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
     }
 
-    .storyboard-shot-text {
-      margin: 8px 0 0;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-sub);
-    }
-
-    .storyboard-shot-text strong {
+    .storyboard-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
       color: var(--text-main);
-      font-size: 0.92rem;
+    }
+
+    .storyboard-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      max-width: 780px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .divider-line {
+      width: 100%;
+      height: 1px;
+      margin: 16px 0 22px;
+      background: linear-gradient(
+        90deg,
+        rgba(123, 91, 40, 0),
+        rgba(242, 211, 143, 0.8),
+        rgba(123, 91, 40, 0)
+      );
+    }
+
+    .storyboard-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .storyboard-grid img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
     }
 
     /* ===== 聯絡方式 ===== */
@@ -645,8 +621,6 @@
       z-index: 1;
     }
 
-    /* ===== RWD 手機優化 ===== */
-
     @media (max-width: 768px) {
       .page {
         padding: 28px 16px 56px;
@@ -667,11 +641,6 @@
       .work-card {
         padding: 16px 14px 14px;
       }
-
-      /* LOGO Carousel：手機一排一個（其實桌機也是，但手機更需要） */
-      .logo-slider .logo-card {
-        flex: 0 0 100%;
-      }
     }
   </style>
 </head>
@@ -687,9 +656,7 @@
             <strong>2D 動畫設計師</strong>｜分鏡 × 動態視覺
           </div>
           <p class="hero-tagline">
-            <p class="hero-tagline">
-  擅長把抽象概念整理成清楚又好看的動畫節奏，讓內容更容易被理解與記住。
-</p>
+            擅長把抽象概念整理成清楚又好看的動畫節奏，讓內容更容易被理解與記住。
           </p>
         </div>
       </div>
@@ -708,7 +675,7 @@
             嗨，我是 Airlia（放空），一位自由接案的 2D 動畫設計師。擁有 8 年以上的動畫與視覺整合經驗，合作內容包含平台宣傳動畫、品牌形象影片、產品視覺化與課程影片等。
           </p>
           <p>
-            我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、也更好觀看。希望每支動畫都能精準傳遞核心訊息，並讓觀眾自然地看下去。
+            我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、也更好觀看。希望每支動畫都能精準傳遞核心訊息，並讓觀眾自然地看下去，也重視在明確需求與尊重創意勞動的前提下合作。
           </p>
           <div class="tag-row">
             <span class="tag hover-raise">2D 動畫設計</span>
@@ -867,89 +834,79 @@
       </div>
     </section>
 
-    <!-- ===== LOGO 動畫（Carousel） ===== -->
+    <!-- ===== LOGO 動畫 ===== -->
     <div class="section-title" style="margin-top: 40px;">
       <span class="section-title-line"></span>
       <span class="label">LOGO 動畫</span>
       <span class="section-title-line"></span>
     </div>
 
-    <section class="logo-slider">
-      <div class="logo-slider-window">
-        <div class="logo-slider-track">
-          <!-- LOGO 1 -->
-          <article class="work-card hover-card logo-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>Logo Reveal</span>
-                  <span>動態識別</span>
-                </div>
-              </div>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/v9HxXCU7ZfY"
-                  title="LOGO 動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
+    <section class="logo-grid">
+      <!-- LOGO 1 -->
+      <article class="work-card hover-raise logo-card">
+        <div class="work-inner">
+          <div class="work-header">
+            <div class="work-title">
+              <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
             </div>
-          </article>
-
-          <!-- LOGO 2 -->
-          <article class="work-card hover-card logo-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>Logo Reveal</span>
-                  <span>光影動態</span>
-                </div>
-              </div>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/br1mqqqbxuI"
-                  title="LOGO 動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
+            <div class="work-tags">
+              <span>Logo Reveal</span>
+              <span>動態識別</span>
             </div>
-          </article>
-
-          <!-- LOGO 3 -->
-          <article class="work-card hover-card logo-card">
-            <div class="work-inner">
-              <div class="work-header">
-                <div class="work-title">
-                  <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
-                </div>
-                <div class="work-tags">
-                  <span>Logo Reveal</span>
-                  <span>簡潔轉場</span>
-                </div>
-              </div>
-              <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/An8EDp59dfY"
-                  title="LOGO 動畫"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </article>
+          </div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/v9HxXCU7ZfY"
+              title="品牌 LOGO 動畫 01"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <div class="logo-slider-dots">
-        <button class="logo-slider-dot active" data-index="0" aria-label="第一個 LOGO"></button>
-        <button class="logo-slider-dot" data-index="1" aria-label="第二個 LOGO"></button>
-        <button class="logo-slider-dot" data-index="2" aria-label="第三個 LOGO"></button>
-      </div>
+      <!-- LOGO 2 -->
+      <article class="work-card hover-raise logo-card">
+        <div class="work-inner">
+          <div class="work-header">
+            <div class="work-title">
+              <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
+            </div>
+            <div class="work-tags">
+              <span>Logo Reveal</span>
+              <span>光影動態</span>
+            </div>
+          </div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/br1mqqqbxuI"
+              title="品牌 LOGO 動畫 02"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- LOGO 3 -->
+      <article class="work-card hover-raise logo-card">
+        <div class="work-inner">
+          <div class="work-header">
+            <div class="work-title">
+              <span class="bracket">【</span>LOGO 動畫<span class="bracket">】</span>
+            </div>
+            <div class="work-tags">
+              <span>Logo Reveal</span>
+              <span>簡潔轉場</span>
+            </div>
+          </div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/An8EDp59dfY"
+              title="品牌 LOGO 動畫 03"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- ===== 分鏡設計作品 ===== -->
@@ -959,57 +916,52 @@
       <span class="section-title-line"></span>
     </div>
 
-    <section class="works-grid">
-      <!-- 分鏡卡片 -->
-      <article class="work-card hover-raise">
-        <div class="work-inner">
-          <div class="work-header">
-            <div class="work-title">
-              <span class="bracket">【</span>分鏡規劃 × 動畫設計搭配<span class="bracket">】</span>
-            </div>
-            <div class="work-tags">
-              <span>分鏡腳本</span>
-              <span>畫面節奏規劃</span>
-            </div>
-          </div>
+    <section class="storyboard-section">
+      <!-- Showcase 01 -->
+      <article class="storyboard-block hover-raise">
+        <h3 class="storyboard-title">
+          分鏡展示 01：科技平台使用情境（HUZU 專案）
+        </h3>
+        <p class="storyboard-desc">
+          呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。
+        </p>
 
-          <div class="storyboard-block">
-            <!-- 分鏡展示 01 -->
-            <div class="storyboard-shot">
-              <img
-                src="images/sb-01.png"
-                alt="分鏡展示 01：科技平台使用情境（HUZU 專案）"
-              />
-              <p class="storyboard-shot-text">
-                <strong>分鏡展示 01：科技平台使用情境（HUZU 專案）</strong><br>
-                呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。
-              </p>
-            </div>
+        <div class="divider-line"></div>
 
-            <!-- 分鏡展示 02 -->
-            <div class="storyboard-shot">
-              <img
-                src="images/sb-02.png"
-                alt="分鏡展示 02：政府／文化敘事動畫"
-              />
-              <p class="storyboard-shot-text">
-                <strong>分鏡展示 02：政府／文化敘事動畫</strong><br>
-                以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。
-              </p>
-            </div>
+        <div class="storyboard-grid">
+          <img src="images/sb-01.png" alt="Storyboard Showcase 01 – 科技平台使用情境">
+        </div>
+      </article>
 
-            <!-- 分鏡展示 03 -->
-            <div class="storyboard-shot">
-              <img
-                src="images/sb-03.png"
-                alt="分鏡展示 03：角色情緒 × 故事敘事"
-              />
-              <p class="storyboard-shot-text">
-                <strong>分鏡展示 03：角色情緒 × 故事敘事</strong><br>
-                以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
-              </p>
-            </div>
-          </div>
+      <!-- Showcase 02 -->
+      <article class="storyboard-block hover-raise">
+        <h3 class="storyboard-title">
+          分鏡展示 02：政府／文化敘事動畫
+        </h3>
+        <p class="storyboard-desc">
+          以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。
+        </p>
+
+        <div class="divider-line"></div>
+
+        <div class="storyboard-grid">
+          <img src="images/sb-02.png" alt="Storyboard Showcase 02 – 政府與公共敘事動畫">
+        </div>
+      </article>
+
+      <!-- Showcase 03 -->
+      <article class="storyboard-block hover-raise">
+        <h3 class="storyboard-title">
+          分鏡展示 03：角色情緒 × 故事敘事
+        </h3>
+        <p class="storyboard-desc">
+          以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
+        </p>
+
+        <div class="divider-line"></div>
+
+        <div class="storyboard-grid">
+          <img src="images/sb-03.png" alt="Storyboard Showcase 03 – 角色情緒與故事敘事">
         </div>
       </article>
     </section>
@@ -1045,7 +997,7 @@
     // footer 年份
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // ===== 動畫作品輪播（上半部） =====
+    // ===== 動畫作品輪播 =====
     const track = document.querySelector(".slider-track");
     const slides = Array.from(document.querySelectorAll(".works-slider .work-card"));
     const dots = Array.from(document.querySelectorAll(".slider-dot"));
@@ -1088,51 +1040,6 @@
     if (track && total > 1) {
       goTo(0);
       start();
-    }
-
-    // ===== LOGO 區 Carousel =====
-    const logoTrack = document.querySelector(".logo-slider-track");
-    const logoSlides = Array.from(document.querySelectorAll(".logo-slider .logo-card"));
-    const logoDots = Array.from(document.querySelectorAll(".logo-slider-dot"));
-
-    let logoCurrent = 0;
-    const logoTotal = logoSlides.length;
-    let logoTimer;
-
-    function goToLogo(index) {
-      if (!logoTrack) return;
-      logoCurrent = (index + logoTotal) % logoTotal;
-      const offset = -logoCurrent * 100;
-      logoTrack.style.transform = `translateX(${offset}%)`;
-      logoDots.forEach((d, i) => d.classList.toggle("active", i === logoCurrent));
-    }
-
-    function nextLogo() {
-      goToLogo(logoCurrent + 1);
-    }
-
-    function startLogo() {
-      if (logoTotal <= 1) return;
-      logoTimer = setInterval(nextLogo, 9000); // 約 9 秒換一個 LOGO
-    }
-
-    function restartLogo() {
-      if (!logoTimer) return;
-      clearInterval(logoTimer);
-      startLogo();
-    }
-
-    logoDots.forEach(dot => {
-      dot.addEventListener("click", () => {
-        const idx = Number(dot.dataset.index || 0);
-        goToLogo(idx);
-        restartLogo();
-      });
-    });
-
-    if (logoTrack && logoTotal > 1) {
-      goToLogo(0);
-      startLogo();
     }
   </script>
 </body>
