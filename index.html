@@ -79,7 +79,6 @@
     }
 
     /* ===== 通用 hover 動效 ===== */
-
     .hover-raise {
       transition:
         transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -87,7 +86,6 @@
         background 0.25s ease,
         border-color 0.25s ease;
     }
-
     .hover-raise:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
@@ -99,7 +97,6 @@
     }
 
     /* ===== HERO ===== */
-
     .hero {
       max-width: 880px;
       margin: 0 auto 32px;
@@ -151,13 +148,12 @@
     }
 
     /* ===== ABOUT / SKILLS ===== */
-
     .intro-section {
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
       gap: 24px;
       margin-top: 24px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       position: relative;
       z-index: 1;
     }
@@ -166,6 +162,7 @@
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
+      box-shadow: none;
       padding: 22px 24px 20px;
       position: relative;
       overflow: hidden;
@@ -261,13 +258,12 @@
       color: var(--text-sub);
     }
 
-    /* ===== Section title（前後細線） ===== */
-
+    /* ===== Section title ===== */
     .section-title {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 40px 0 18px;
+      margin: 30px 0 14px;
       font-size: 0.95rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -289,186 +285,147 @@
 
     .section-title span.label { white-space: nowrap; }
 
-    /* ===== 服務方案（新增） ===== */
-
-    .service-section {
-      position: relative;
-      z-index: 1;
-      margin: 28px 0 10px;
-    }
-
-    .service-note {
+    /* ===== 服務方案 ===== */
+    .services-hint {
+      margin: 4px auto 16px;
+      max-width: 820px;
       text-align: center;
       color: var(--text-sub);
-      font-size: 0.95rem;
-      max-width: 860px;
-      margin: 0 auto 18px;
-      line-height: 1.8;
+      font-size: 0.92rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .service-note strong { color: var(--gold); font-weight: 700; }
-
-    .service-grid {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 10px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 14px;
     }
 
     .service-card {
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(242, 211, 143, 0.25);
-      padding: 22px 22px 18px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
       backdrop-filter: blur(12px);
-      position: relative;
       overflow: hidden;
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
+      position: relative;
     }
 
-    .service-head {
+    .plan-top{
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 14px;
     }
 
-    .plan-pill {
+    .plan-pill{
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      color: var(--gold);
-      border: 1px solid rgba(242, 211, 143, 0.35);
-      background: rgba(0,0,0,0.35);
-      padding: 5px 10px;
+      justify-content: center;
+      padding: 6px 14px;
       border-radius: 999px;
-      white-space: nowrap;
-    }
-
-    .recommend-badge {
-      font-size: 0.78rem;
+      border: 1px solid rgba(242, 211, 143, 0.55);
       color: var(--gold);
-      border: 1px solid rgba(242, 211, 143, 0.35);
-      background: rgba(0,0,0,0.25);
-      padding: 5px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      white-space: nowrap; /* 避免變直排 */
     }
 
     .service-title {
-      margin-top: 10px;
-      font-size: 1.22rem;
-      font-weight: 750;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+      margin-bottom: 4px;
       letter-spacing: 0.06em;
-      color: var(--text-main);
-      line-height: 1.35;
     }
 
-    .service-subtitle {
-      margin-top: 6px;
+    .service-subtitle{
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 0.82rem;  /* 小字 */
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .service-desc{
+      color: var(--text-sub);
       font-size: 0.9rem;
-      color: var(--text-sub);
-      opacity: 0.95;
-    }
-
-    .service-subtitle.small {
-      font-size: 0.85rem;
-      color: rgba(184, 186, 196, 0.92);
-    }
-
-    .service-desc {
-      margin-top: 14px;
-      font-size: 0.92rem;
-      color: var(--text-sub);
       text-align: justify;
+      margin-bottom: 10px;
     }
 
-    .service-list {
-      margin-top: 14px;
-      padding-left: 0;
+    .service-list{
       list-style: none;
-      color: var(--text-main);
-      opacity: 0.92;
-      flex: 1;
+      margin-top: 10px;
+      color: var(--text-sub);
+      font-size: 0.9rem;
     }
 
-    .service-list li {
+    .service-list li{
       position: relative;
-      padding-left: 18px;
-      margin: 10px 0;
-      font-size: 0.95rem;
-      color: var(--text-main);
+      padding-left: 16px;
+      margin: 8px 0;
+      font-size: 0.88rem;  /* ✅ 點點旁文字變小 */
+      line-height: 1.55;   /* ✅ 行距縮一點 */
+      letter-spacing: 0.01em;
     }
 
-    .service-list li::before {
+    .service-list li::before{
       content: "";
       position: absolute;
       left: 0;
-      top: 0.7em;
-      width: 7px;
-      height: 7px;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 20%, var(--gold-light), var(--gold-deep));
+      opacity: 0.9;
+    }
+
+    .service-muted{
+      margin-top: 10px;
+      color: var(--text-sub);
+      font-size: 0.85rem;
       opacity: 0.95;
-    }
-
-    .service-muted {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: rgba(184, 186, 196, 0.85);
-    }
-
-    .service-btn-wrap {
-      margin-top: 14px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .service-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 18px;     /* 小一點 */
-      font-size: 0.95rem;     /* 小一點 */
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      border: 1px solid rgba(242, 211, 143, 0.45);
-      background: rgba(0,0,0,0.18);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .service-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(242, 211, 143, 0.75);
-      background: rgba(242, 211, 143, 0.08);
-    }
-
-    .service-footnote {
-      margin-top: 14px;
       text-align: left;
-      color: rgba(184, 186, 196, 0.9);
-      font-size: 0.92rem;
     }
 
-    .service-footnote strong { color: var(--text-main); }
+    .service-muted strong{ color: var(--gold); font-weight: 600; }
 
-    @media (max-width: 900px) {
-      .service-grid { grid-template-columns: 1fr; }
-      .service-card { min-height: unset; }
+    .services-cta{
+      text-align:center;
+      margin: 14px 0 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-mail{
+      display:inline-block;
+      background: rgba(0,0,0,0.45);
+      color: var(--gold);
+      border: 1px solid rgba(242, 211, 143, 0.55);
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+    }
+
+    .services-cta-note{
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
     }
 
     /* ===== 動畫作品：輪播 ===== */
-
     .works-slider { margin: 8px 0 16px; position: relative; z-index: 1; }
 
     .slider-window { overflow: hidden; border-radius: var(--radius-lg); }
@@ -496,11 +453,13 @@
     .slider-dot.active { width: 18px; background: var(--gold); }
 
     /* ===== 作品卡片共用 ===== */
+    .works-grid { display: flex; flex-direction: column; gap: 26px; position: relative; z-index: 1; }
 
     .work-card {
       background: var(--bg-elevated);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
+      box-shadow: none;
       padding: 18px 18px 16px;
       position: relative;
       overflow: hidden;
@@ -517,11 +476,7 @@
       margin-bottom: 8px;
     }
 
-    .work-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--gold-mid);
-    }
+    .work-title { font-size: 1rem; font-weight: 600; color: var(--gold-mid); }
 
     .work-title span.bracket { color: var(--gold-light); }
 
@@ -558,12 +513,64 @@
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
     }
 
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .work-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      opacity: 0.85;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .chip {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.78rem;
+    }
+
+    /* ===== LOGO 動畫區 ===== */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .logo-card .work-title { font-size: 0.95rem; }
+    .logo-card .work-tags { font-size: 0.75rem; }
+
+    @media (max-width: 768px) {
+      .logo-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== 分鏡設計作品區 ===== */
+    .storyboard-section { display: flex; flex-direction: column; gap: 32px; margin-top: 20px; }
+
+    .storyboard-block {
+      background: var(--bg-elevated);
+      padding: 22px 24px 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .storyboard-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+
+    .storyboard-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      max-width: 780px;
+      line-height: 1.6;
+      text-align: justify;
     }
 
     .divider-line {
@@ -578,86 +585,7 @@
       );
     }
 
-    .work-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      opacity: 0.85;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.78rem;
-    }
-
-    /* ===== LOGO 動畫區 ===== */
-
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-card .work-title { font-size: 0.95rem; }
-    .logo-card .work-tags { font-size: 0.75rem; }
-
-    @media (max-width: 768px) {
-      .logo-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ===== 分鏡設計作品區 ===== */
-
-    .storyboard-section {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      margin-top: 20px;
-    }
-
-    .storyboard-block {
-      background: var(--bg-elevated);
-      padding: 22px 24px 28px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-    }
-
-    .storyboard-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    .storyboard-desc {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      max-width: 780px;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    .storyboard-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
+    .storyboard-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 
     .storyboard-grid img {
       width: 100%;
@@ -667,7 +595,6 @@
     }
 
     /* ===== 聯絡方式 ===== */
-
     .contact-card {
       margin-top: 40px;
       background: var(--bg-elevated);
@@ -698,7 +625,7 @@
 
     .contact-list {
       list-style: none;
-      margin: 8px 0 14px 0;
+      margin: 4px 0 10px 0;
       padding-left: 0;
       color: var(--text-sub);
       line-height: 1.7;
@@ -722,40 +649,8 @@
       opacity: 0.9;
     }
 
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 22px;
-      border-radius: 10px;
-      border: 1px solid rgba(242, 211, 143, 0.45);
-      color: var(--gold);
-      background: rgba(0,0,0,0.18);
-      font-size: 0.98rem;
-      letter-spacing: 0.1em;
-      transition: 0.25s ease;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(242, 211, 143, 0.75);
-      background: rgba(242, 211, 143, 0.08);
-    }
-
-    .contact-email {
-      font-size: 0.9rem;
-      color: rgba(184, 186, 196, 0.9);
-    }
-
-    .contact-email strong { color: var(--text-main); }
+    .contact-highlight { margin-top: 6px; font-size: 0.9rem; color: var(--text-main); }
+    .contact-highlight span { color: var(--gold); }
 
     footer {
       margin-top: 26px;
@@ -773,23 +668,12 @@
       .hero-tagline { font-size: 0.9rem; }
       .work-card { padding: 16px 14px 14px; }
     }
-    .service-badge-center{
-  display: block;
-  width: fit-content;
-  margin: 0 auto 18px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(242, 211, 143, 0.55);
-  color: var(--gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.14em;
-}
-
   </style>
 </head>
 
 <body>
   <div class="page">
+
     <!-- HERO -->
     <section class="hero">
       <div class="hero-header">
@@ -815,7 +699,6 @@
             <span class="card-title-dot"></span>
             <span class="card-title-text">ABOUT</span>
           </div>
-
           <p>
             嗨，我是 Airlia（放空），一位自由接案的 2D 動畫設計師。擁有 8 年以上的動畫與視覺整合經驗，合作內容包含平台宣傳動畫、品牌形象影片、產品視覺化與課程影片等。
           </p>
@@ -823,7 +706,6 @@
             我擅長從文字與抽象概念中抓出重點，將內容整理成清晰的分鏡與節奏，再透過動態設計把資訊變得更好理解、也更好觀看。
             希望每支動畫都能精準傳遞核心訊息，並讓觀眾自然地看下去。
           </p>
-
           <div class="tag-row">
             <span class="tag hover-raise">2D 動畫設計</span>
             <span class="tag hover-raise">分鏡腳本規劃</span>
@@ -854,109 +736,104 @@
       </article>
     </section>
 
-    <!-- ===== 服務方案（放在 ABOUT/SKILLS 下面） ===== -->
-    <div class="section-title" style="margin-top: 26px;">
+    <!-- ===== 服務方案（放在 ABOUT 下面）===== -->
+    <div class="section-title" style="margin-top: 18px;">
       <span class="section-title-line"></span>
       <span class="label">服務方案</span>
       <span class="section-title-line"></span>
     </div>
 
-    <section class="service-section" id="service">
-      <p class="service-note">
-        先選一個最接近的方向即可（只有初步想法也沒關係）。<br>
-        我會在 <strong>2 個工作天內</strong> 回覆可行方案、時程與報價區間。
-      </p>
+    <p class="services-hint">
+      【先選一個最接近的方向即可（只有初步想法也沒關係）。我會在 2 個工作天內回覆可行方案、時程與報價區間。】
+    </p>
 
-      <div class="service-grid">
-        <!-- 方案 A -->
-        <article class="service-card hover-raise">
-          <div class="service-head">
-           <div class="service-badge">方案 A </div>
+    <section class="services-grid">
+      <!-- 方案 A -->
+      <article class="service-card hover-raise">
+        <div class="plan-top">
+          <div class="plan-pill">方案 A</div>
+        </div>
 
-          <div class="service-title">2D 動畫製作</div>
-          <div class="service-subtitle small">（已提供腳本 / 分鏡）</div>
+        <div class="service-title">2D 動畫製作</div>
+        <div class="service-subtitle">（已提供腳本 / 分鏡）</div>
 
-          <p class="service-desc">
-            適合已有文案／腳本或分鏡的團隊，直接進入動畫製作。
-          </p>
+        <p class="service-desc">
+          適合已有文案／腳本或分鏡的團隊，直接進入動畫製作。
+        </p>
 
-          <ul class="service-list">
-            <li>動畫製作（節奏／轉場／動態視覺）</li>
-            <li>素材整理與畫面一致性調整</li>
-            <li>成品輸出（MP4，常用比例）</li>
-          </ul>
+        <ul class="service-list">
+          <li>動畫製作（節奏／轉場／動態視覺）</li>
+          <li>素材整理與畫面一致性調整</li>
+          <li>成品輸出（MP4，常用比例）</li>
+        </ul>
 
-          <div class="service-muted">不含：腳本撰寫／分鏡設計</div>
+        <div class="service-muted">
+          <strong>不含：</strong>腳本撰寫／分鏡設計
+        </div>
+      </article>
 
-          <div class="service-btn-wrap">
-            <a class="service-btn"
-               href="mailto:airlia.animation@gmail.com?subject=%E3%80%90%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%EF%BC%9A%E6%96%B9%E6%A1%88A%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%88%E6%96%B9%E6%A1%88A%EF%BC%9A2D%E5%8B%95%E7%95%AB%E8%A3%BD%E4%BD%9C%EF%BC%8C%E5%B7%B2%E6%8F%90%E4%BE%9B%E8%85%B3%E6%9C%AC%2F%E5%88%86%E9%8F%A1%EF%BC%89%EF%BC%9A%0D%0A%0D%0A1.%20%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1%EF%BC%9A%0D%0A2.%20%E5%BD%B1%E7%89%87%E9%A0%90%E4%BC%B0%E9%95%B7%E5%BA%A6%EF%BC%88%E4%BE%8B%EF%BC%9A30%E7%A7%92%2F60%E7%A7%92%EF%BC%89%EF%BC%9A%0D%0A3.%20%E7%8F%BE%E6%9C%89%E8%B3%87%E6%96%99%E3%80%90%E8%85%B3%E6%9C%AC%2F%E5%88%86%E9%8F%A1%2F%E7%B4%A0%E6%9D%90%2F%E5%93%81%E7%89%8C%E8%A8%AD%E5%AE%9A%E3%80%91%EF%BC%9A%0D%0A4.%20%E5%8F%83%E8%80%83%E7%AF%84%E4%BE%8B%E9%80%A3%E7%B5%90%EF%BC%88%E5%A6%82%E6%9C%89%EF%BC%89%EF%BC%9A">
-              開始討論（方案 A）
-            </a>
-          </div>
-        </article>
+      <!-- 方案 B -->
+      <article class="service-card hover-raise">
+        <div class="plan-top">
+          <div class="plan-pill">方案 B</div>
+        </div>
 
-        <!-- 方案 B -->
-        <article class="service-card hover-raise">
-          <div class="service-head">
-            <div class="service-badge">方案 B </div>
-            <span class="recommend-badge">推薦</span>
-          </div>
+        <div class="service-title">分鏡設計＋Animatic</div>
+        <div class="service-subtitle">（概念整理 → 分鏡 → 動畫）</div>
 
-          <div class="service-title">分鏡 + Animatic + 2D 動畫</div>
-          <div class="service-subtitle">（完整流程）</div>
+        <p class="service-desc">
+          適合只有大綱或概念的專案。我會先把資訊整理成清楚可討論的分鏡與節奏，再進入動畫製作。
+        </p>
 
-          <p class="service-desc">
-            適合只有概念／文案，需要我協助把節奏與畫面說清楚、降低重工。
-          </p>
+        <ul class="service-list">
+          <li>內容重點整理與節奏規劃</li>
+          <li>分鏡設計（畫面拆解／運鏡／轉場）</li>
+          <li>Animatic（含節奏確認）</li>
+        </ul>
 
-          <ul class="service-list">
-            <li>分鏡設計（鏡頭／節奏／敘事）</li>
-            <li>Animatic（確認順序後再進正式動畫）</li>
-            <li>2D 動畫製作 + 基本音效節奏建議</li>
-            <li>成品輸出（MP4，常用比例）</li>
-          </ul>
+        <div class="service-muted">
+          <strong>備註：</strong>可依專案加購配音／字幕／音效建議
+        </div>
+      </article>
 
-          <div class="service-btn-wrap">
-            <a class="service-btn"
-               href="mailto:airlia.animation@gmail.com?subject=%E3%80%90%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%EF%BC%9A%E6%96%B9%E6%A1%88B%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%88%E6%96%B9%E6%A1%88B%EF%BC%9A%E5%88%86%E9%8F%A1%2BAnimatic%2B2D%E5%8B%95%E7%95%AB%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%EF%BC%89%EF%BC%9A%0D%0A%0D%0A1.%20%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1%EF%BC%9A%0D%0A2.%20%E5%BD%B1%E7%89%87%E9%A0%90%E4%BC%B0%E9%95%B7%E5%BA%A6%EF%BC%88%E4%BE%8B%EF%BC%9A30%E7%A7%92%2F60%E7%A7%92%EF%BC%89%EF%BC%9A%0D%0A3.%20%E7%9B%AE%E6%A8%99%E8%A7%80%E7%9C%BE%E8%88%87%E4%B8%BB%E8%A8%B4%E6%B1%82%EF%BC%88%E6%83%B3%E8%AE%93%E4%BA%BA%E7%90%86%E8%A7%A3%E4%BB%80%E9%BA%BC%2F%E5%81%9A%E4%BB%80%E9%BA%BC%EF%BC%89%EF%BC%9A%0D%0A4.%20%E7%8F%BE%E6%9C%89%E8%B3%87%E6%96%99%E3%80%90%E6%96%87%E6%A1%88%2F%E5%A4%A7%E7%B6%B1%2F%E5%93%81%E7%89%8C%E8%B3%87%E6%96%99%2F%E7%B4%A0%E6%9D%90%E3%80%91%EF%BC%9A%0D%0A5.%20%E5%8F%83%E8%80%83%E7%AF%84%E4%BE%8B%E9%80%A3%E7%B5%90%EF%BC%88%E5%A6%82%E6%9C%89%EF%BC%89%EF%BC%9A">
-              開始討論（方案 B）
-            </a>
-          </div>
-        </article>
+      <!-- 方案 C -->
+      <article class="service-card hover-raise">
+        <div class="plan-top">
+          <div class="plan-pill">方案 C</div>
+        </div>
 
-        <!-- 方案 C -->
-        <article class="service-card hover-raise">
-          <div class="service-head">
-            <div class="service-badge">方案 C </div>
-          </div>
+        <div class="service-title">LOGO 動畫</div>
+        <div class="service-subtitle">（Logo Reveal / 動態識別）</div>
 
-          <div class="service-title">Logo 動畫</div>
-          <div class="service-subtitle">（3–6 秒）</div>
+        <p class="service-desc">
+          適合品牌開場片頭、影片統一識別、活動片尾等需求。可依品牌調性做簡潔或更有記憶點的動態呈現。
+        </p>
 
-          <p class="service-desc">
-            適合片頭／片尾與社群影片品牌一致性，快速提升質感與辨識度。
-          </p>
+        <ul class="service-list">
+          <li>Logo Reveal 動態設計</li>
+          <li>色彩／節奏／光感調性一致</li>
+          <li>常用輸出（MP4 / MOV，依需求）</li>
+        </ul>
 
-          <ul class="service-list">
-            <li>Logo Reveal 動畫（3–6 秒）</li>
-            <li>輸出 MP4（透明背景版本可加購）</li>
-            <li>可依品牌調整節奏與光影質感</li>
-          </ul>
-
-          <div class="service-btn-wrap">
-            <a class="service-btn"
-               href="mailto:airlia.animation@gmail.com?subject=%E3%80%90Logo%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%EF%BC%9A%E6%96%B9%E6%A1%88C%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%93%81%E7%89%8C%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%20Logo%20%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%88%E6%96%B9%E6%A1%88C%EF%BC%9A3%E2%80%936%E7%A7%92%EF%BC%89%EF%BC%9A%0D%0A%0D%0A1.%20%E5%93%81%E7%89%8C%E5%90%8D%E7%A8%B1%EF%BC%9A%0D%0A2.%20%E7%94%A8%E9%80%94%EF%BC%88%E7%89%87%E9%A0%AD%2F%E7%89%87%E5%B0%BE%2F%E7%A4%BE%E7%BE%A4%2F%E5%BB%A3%E5%91%8A%EF%BC%89%EF%BC%9A%0D%0A3.%20Logo%20%E6%AA%94%E6%A1%88%EF%BC%88AI%2FSVG%2FPNG%EF%BC%89%E6%98%AF%E5%90%A6%E5%B7%B2%E6%BA%96%E5%82%99%EF%BC%9A%0D%0A4.%20%E5%8F%83%E8%80%83%E9%A2%A8%E6%A0%BC%E9%80%A3%E7%B5%90%EF%BC%88%E5%A6%82%E6%9C%89%EF%BC%89%EF%BC%9A%0D%0A5.%20%E8%AB%8B%E5%91%8A%E7%9F%A5%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%EF%BC%9A">
-              詢價 Logo 動畫（方案 C）
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <p class="service-footnote">
-        若按鈕無法開啟信件，請直接寄信至：<strong>airlia.animation@gmail.com</strong>
-      </p>
+        <div class="service-muted">
+          <strong>不含：</strong>Logo 設計（若需可另評估）
+        </div>
+      </article>
     </section>
+
+    <!-- 統一一顆按鈕（mailto 模板） -->
+    <div class="services-cta">
+      <a
+        class="btn-mail hover-raise"
+        href="mailto:airlia.animation@gmail.com?subject=%E3%80%90%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%9A%0D%0A%0D%0A0.%20%E6%96%B9%E6%A1%88%E9%81%B8%E6%93%87%EF%BC%88%E5%BF%85%E5%A1%AB%EF%BC%89%EF%BC%9AA%20%2F%20B%20%2F%20C%20%2F%20%E4%B8%8D%E7%A2%BA%E5%AE%9A%EF%BC%88%E6%83%B3%E5%85%88%E8%A8%8E%E8%AB%96%EF%BC%89%0D%0A%0D%0A1.%20%E5%B0%88%E6%A1%88%E9%A1%9E%E5%9E%8B%EF%BC%9A%EF%BC%88%E5%A6%82%EF%BC%9A%E5%93%81%E7%89%8C%E5%BD%A2%E8%B1%A1%20%2F%20%E8%AA%AA%E6%98%8E%E5%8B%95%E7%95%AB%EF%BC%89%0D%0A2.%20%E5%BD%B1%E7%89%87%E9%A0%90%E4%BC%B0%E9%95%B7%E5%BA%A6%EF%BC%9A%EF%BC%88%E5%A6%82%EF%BC%9A30%E7%A7%92%20%2F%2060%E7%A7%92%EF%BC%89%0D%0A3.%20%E7%9B%AE%E5%89%8D%E8%B3%87%E6%96%99%EF%BC%88%E5%8F%AF%E8%A4%87%E9%81%B8%EF%BC%89%EF%BC%9A%E8%85%B3%E6%9C%AC%20%2F%20%E5%A4%A7%E7%B6%B1%20%2F%20%E8%AA%AA%E6%98%8E%E6%96%87%E5%AD%97%20%2F%20%E5%8F%83%E8%80%83%E5%BD%B1%E7%89%87%20%2F%20Logo%20%2F%20%E5%85%B6%E4%BB%96%0D%0A4.%20%E5%8F%83%E8%80%83%E7%AF%84%E4%BE%8B%E9%80%A3%E7%B5%90%EF%BC%88%E8%8B%A5%E6%9C%89%EF%BC%8C1%E2%80%932%20%E5%80%8B%EF%BC%89%EF%BC%9A%0D%0A5.%20%E6%9C%80%E5%9C%A8%E6%84%8F%E7%9A%84%E7%9B%AE%E6%A8%99%E6%98%AF%EF%BC%9A%EF%BC%88%E4%BE%8B%EF%BC%9A%E8%AE%93%E5%AE%A2%E6%88%B6%E7%90%86%E8%A7%A3%E6%9C%8D%E5%8B%99%2F%E6%8F%90%E9%AB%98%E8%BD%89%E6%8F%9B%2F%E5%93%81%E7%89%8C%E6%B0%A3%E8%B3%AA%EF%BC%89%0D%0A6.%20%E9%A0%90%E8%A8%88%E4%B8%8A%E7%B7%9A%E6%99%82%E9%96%93%EF%BC%8F%E6%AD%BB%E7%B7%9A%EF%BC%9A%0D%0A%0D%0A%E8%AC%9D%E8%AC%9D%EF%BC%81"
+      >
+        開始討論專案
+      </a>
+
+      <div class="services-cta-note">
+        或直接來信：<span style="color: var(--text-main);">airlia.animation@gmail.com</span>
+      </div>
+    </div>
 
     <!-- ===== 動畫作品（輪播） ===== -->
     <div class="section-title">
@@ -968,28 +845,38 @@
     <section class="works-slider">
       <div class="slider-window">
         <div class="slider-track">
+
           <!-- Slide 1：HUZU -->
           <article class="work-card hover-raise">
             <div class="work-inner">
               <div class="work-header">
-                <div class="work-title"><span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span></div>
+                <div class="work-title">
+                  <span class="bracket">【</span>HUZU 平台宣傳動畫<span class="bracket">】</span>
+                </div>
                 <div class="work-tags">
-                  <span>平台宣傳</span><span>分鏡＋全流程動畫</span><span>2025</span>
+                  <span>平台宣傳</span>
+                  <span>分鏡＋全流程動畫</span>
+                  <span>2025</span>
                 </div>
               </div>
               <p class="work-desc">
-                為「HUZU 平台」製作的新型態產學互助平台宣傳影片。從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與。
+                為「HUZU 平台」製作的新型態產學互助平台宣傳影片。
+                從腳本潤稿、分鏡設計、畫面構成到動畫製作皆全程參與，目標是在短時間內清楚、易懂地說明平台運作模式與使用者價值。
               </p>
               <p class="work-desc">
-                製作過程中善用 AI 協助整理內容概念與初版草稿，再轉化為適合動畫呈現的畫面節奏與視覺敘事。
+                製作過程中，也善用 AI（ChatGPT）協助整理內容概念與初版草稿，再進一步轉化為適合動畫呈現的畫面節奏與視覺敘事，
+                大幅提升了資訊溝通效率與腳本討論品質。
               </p>
 
               <div class="divider-line"></div>
 
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/owZXk7mlcvg" title="HUZU 平台宣傳動畫" allowfullscreen></iframe>
+                <iframe
+                  src="https://www.youtube.com/embed/owZXk7mlcvg"
+                  title="HUZU 平台宣傳動畫"
+                  allowfullscreen
+                ></iframe>
               </div>
-
               <div class="work-footer">
                 <div class="chips">
                   <span class="chip">分鏡設計</span>
@@ -1006,17 +893,28 @@
           <article class="work-card hover-raise">
             <div class="work-inner">
               <div class="work-header">
-                <div class="work-title"><span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span></div>
-                <div class="work-tags"><span>品牌形象</span><span>核心概念轉譯</span><span>2024</span></div>
+                <div class="work-title">
+                  <span class="bracket">【</span>Holly Hair 品牌核心動畫<span class="bracket">】</span>
+                </div>
+                <div class="work-tags">
+                  <span>品牌形象</span>
+                  <span>核心概念轉譯</span>
+                  <span>2024</span>
+                </div>
               </div>
               <p class="work-desc">
-                以品牌核心價值與產品特色為主軸，將抽象品牌理想具象成視覺語彙，建立穩定又具有溫度的品牌印象。
+                以品牌核心價值與產品特色為主軸，將抽象的品牌理想具象成視覺語彙。透過 Logo、色彩與關鍵畫面設計，
+                建立穩定又具有溫度的品牌印象。
               </p>
 
               <div class="divider-line"></div>
 
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/EHiU6NXAqSo" title="Holly Hair 品牌核心動畫" allowfullscreen></iframe>
+                <iframe
+                  src="https://www.youtube.com/embed/EHiU6NXAqSo"
+                  title="Holly Hair 品牌核心動畫"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="work-footer">
                 <div class="chips">
@@ -1032,17 +930,27 @@
           <article class="work-card hover-raise">
             <div class="work-inner">
               <div class="work-header">
-                <div class="work-title"><span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span></div>
-                <div class="work-tags"><span>平台廣告</span><span>角色情境動畫</span><span>2023</span></div>
+                <div class="work-title">
+                  <span class="bracket">【</span>璽朵批發平台廣告 動畫<span class="bracket">】</span>
+                </div>
+                <div class="work-tags">
+                  <span>平台廣告</span>
+                  <span>角色情境動畫</span>
+                  <span>2023</span>
+                </div>
               </div>
               <p class="work-desc">
-                以日常情境切入，帶出批發平台的痛點與解方，透過角色表情與畫面節奏設計，加強代入感與轉換意圖。
+                以日常情境切入，帶出批發平台的痛點與解方。透過角色表情、視線與畫面節奏的設計，加強觀眾代入感與轉換意圖。
               </p>
 
               <div class="divider-line"></div>
 
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/wmJIkAjpgsQ" title="璽朵批發平台廣告 動畫" allowfullscreen></iframe>
+                <iframe
+                  src="https://www.youtube.com/embed/wmJIkAjpgsQ"
+                  title="璽朵批發平台廣告 動畫"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div class="work-footer">
                 <div class="chips">
@@ -1054,6 +962,7 @@
               </div>
             </div>
           </article>
+
         </div>
       </div>
 
@@ -1119,60 +1028,72 @@
     <section class="storyboard-section">
       <article class="storyboard-block hover-raise">
         <h3 class="storyboard-title">【分鏡展示】角色情緒 × 故事敘事</h3>
-        <p class="storyboard-desc">以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。</p>
+        <p class="storyboard-desc">
+          以夕陽氣氛與角色動作變化為主軸，規劃「起－承－轉－合」故事線，呈現角色情緒推進與畫面氛圍鋪陳能力。
+        </p>
         <div class="divider-line"></div>
         <div class="storyboard-grid">
-          <img src="images/sb-01.png" alt="Storyboard Showcase 01">
+          <img src="images/sb-01.png" alt="Storyboard Showcase 01 – 角色情緒 × 故事敘事">
         </div>
       </article>
 
       <article class="storyboard-block hover-raise">
         <h3 class="storyboard-title">【分鏡展示】科技平台使用情境（HUZU 專案）</h3>
-        <p class="storyboard-desc">呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。</p>
+        <p class="storyboard-desc">
+          呈現平台流程與使用者行為，將抽象功能轉換為清楚易懂的畫面節奏，提升腳本與客戶溝通效率。
+        </p>
         <div class="divider-line"></div>
         <div class="storyboard-grid">
-          <img src="images/sb-02.png" alt="Storyboard Showcase 02">
+          <img src="images/sb-02.png" alt="Storyboard Showcase 02 – 科技平台使用情境">
         </div>
       </article>
 
       <article class="storyboard-block hover-raise">
         <h3 class="storyboard-title">【分鏡展示】文化敘事動畫</h3>
-        <p class="storyboard-desc">以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。</p>
+        <p class="storyboard-desc">
+          以城市景觀、節慶與公共議題為主題，透過分鏡規劃多場景轉場、鏡頭調度與視覺節奏，是敘事類動畫的重要前期設計。
+        </p>
         <div class="divider-line"></div>
         <div class="storyboard-grid">
-          <img src="images/sb-03.png" alt="Storyboard Showcase 03">
+          <img src="images/sb-03.png" alt="Storyboard Showcase 03 – 文化敘事動畫">
         </div>
       </article>
     </section>
 
     <!-- 聯絡方式 -->
-    <section class="contact-card hover-raise" id="contact">
+    <section class="contact-card hover-raise">
       <h3>CONTACT</h3>
       <p>目前主要以自由接案方式合作，專注於 2D 動畫與分鏡相關專案。</p>
       <p>無論您已有完整腳本，或只有初步構想，都歡迎來信討論。</p>
 
-      <p style="margin-top:10px;">為了加快報價與溝通效率，來信建議包含：</p>
       <ul class="contact-list">
+        <p>為了加快報價與溝通效率，來信建議包含：</p>
         <li>專案類型（如：品牌形象、說明動畫）</li>
         <li>影片預估長度（如：30 秒、60 秒）</li>
         <li>目前進度（如：已有腳本 / 已有錄音 / 僅有大綱）</li>
         <li>參考範例（1～2 個您喜歡的風格連結）</li>
       </ul>
 
-      <p>收到需求後，我會在 2 個工作天內回覆正式報價與製作規劃，讓合作方式清楚又安心。</p>
+      <p>收到需求後，我會在 2 個工作天內回覆可行方案、時程與報價區間。</p>
 
-      <div class="contact-actions">
-        <a class="contact-btn"
-           href="mailto:airlia.animation@gmail.com?subject=%E3%80%90%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%9A%0D%0A%0D%0A1.%20%E5%B0%88%E6%A1%88%E9%A1%9E%E5%9E%8B%EF%BC%9A(%E5%A6%82%EF%BC%9A%E5%93%81%E7%89%8C%E5%BD%A2%E8%B1%A1%E3%80%81%E8%AA%AA%E6%98%8E%E5%8B%95%E7%95%AB)%0D%0A2.%20%E5%BD%B1%E7%89%87%E9%A0%90%E4%BC%B0%E9%95%B7%E5%BA%A6%EF%BC%9A(%E5%A6%82%EF%BC%9A30%E7%A7%92%E3%80%8160%E7%A7%92)%0D%0A3.%20%E7%9B%AE%E5%89%8D%E9%80%B2%E5%BA%A6%EF%BC%9A(%E5%A6%82%EF%BC%9A%E5%B7%B2%E6%9C%89%E8%85%B3%E6%9C%AC%20%2F%20%E5%B7%B2%E6%9C%89%E9%8C%84%E9%9F%B3%20%2F%20%E5%83%85%E6%9C%89%E5%A4%A7%E7%B6%B1)%0D%0A4.%20%E5%8F%83%E8%80%83%E7%AF%84%E4%BE%8B%EF%BC%9A(%E8%AB%8B%E8%B2%BC%E4%B8%8A%E9%80%A3%E7%B5%90)">
+      <div style="text-align: center; margin: 18px 0 10px;">
+        <a
+          class="btn-mail hover-raise"
+          href="mailto:airlia.animation@gmail.com?subject=%E3%80%90%E5%8B%95%E7%95%AB%E8%A9%A2%E5%83%B9%E3%80%91%E8%AB%8B%E5%A1%AB%E5%AF%AB%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1&body=%E5%97%A8%20Airlia%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E5%8B%95%E7%95%AB%E5%A0%B1%E5%83%B9%EF%BC%9A%0D%0A%0D%0A0.%20%E6%96%B9%E6%A1%88%E9%81%B8%E6%93%87%EF%BC%88%E5%BF%85%E5%A1%AB%EF%BC%89%EF%BC%9AA%20%2F%20B%20%2F%20C%20%2F%20%E4%B8%8D%E7%A2%BA%E5%AE%9A%EF%BC%88%E6%83%B3%E5%85%88%E8%A8%8E%E8%AB%96%EF%BC%89%0D%0A%0D%0A1.%20%E5%B0%88%E6%A1%88%E9%A1%9E%E5%9E%8B%EF%BC%9A%0D%0A2.%20%E5%BD%B1%E7%89%87%E9%A0%90%E4%BC%B0%E9%95%B7%E5%BA%A6%EF%BC%9A%0D%0A3.%20%E7%9B%AE%E5%89%8D%E8%B3%87%E6%96%99%EF%BC%88%E5%8F%AF%E8%A4%87%E9%81%B8%EF%BC%89%EF%BC%9A%0D%0A4.%20%E5%8F%83%E8%80%83%E7%AF%84%E4%BE%8B%E9%80%A3%E7%B5%90%EF%BC%88%E8%8B%A5%E6%9C%89%EF%BC%891%E2%80%932%20%E5%80%8B%EF%BC%9A%0D%0A5.%20%E6%9C%80%E5%9C%A8%E6%84%8F%E7%9A%84%E7%9B%AE%E6%A8%99%E6%98%AF%EF%BC%9A%0D%0A6.%20%E9%A0%90%E8%A8%88%E4%B8%8A%E7%B7%9A%E6%99%82%E9%96%93%EF%BC%8F%E6%AD%BB%E7%B7%9A%EF%BC%9A%0D%0A%0D%0A%E8%AC%9D%E8%AC%9D%EF%BC%81"
+        >
           開始討論專案
         </a>
-        <div class="contact-email">或直接來信：<strong>airlia.animation@gmail.com</strong></div>
+
+        <p style="margin-top: 12px; font-size: 14px; color: #888;">
+          或直接來信：airlia.animation@gmail.com
+        </p>
       </div>
     </section>
 
     <footer>
       © <span id="year"></span> Airlia / 放空．2D 動畫與視覺創作
     </footer>
+
   </div>
 
   <script>
