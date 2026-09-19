@@ -591,11 +591,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-light); ou
 /* Audience themes share the same components. */
 body[data-variant="freelance"] { --bg-elevated: #101014; background: radial-gradient(ellipse at top, #20202b, #070709 65%); }
 body[data-variant="portfolio"] {
-  --bg-elevated: #0d211c;
-  --border-soft: #3b4b43;
-  --text-sub: #c5cec9;
+  --bg-elevated: #111715;
+  --border-soft: #343a37;
+  --text-sub: #c5c9c7;
   --gold-mid: #c6a65c;
-  background: radial-gradient(ellipse at top, #162b24, #071511 65%);
+  background: radial-gradient(ellipse at top, #18201d, #080b0a 65%);
 }
 .page { overflow: visible; padding-top: 0; }
 .site-nav { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; background: var(--bg-elevated); border-bottom: 1px solid var(--gold-mid); box-shadow: 0 0 0 12px var(--bg-elevated); }
