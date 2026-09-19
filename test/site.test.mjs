@@ -15,7 +15,11 @@ const mailLinks = html => [...html.matchAll(/href="(mailto:[^"]+)"/g)].map(match
 test('both pages contain every shared work in static HTML', () => {
   assert.deepEqual(workIds(freelance), data.works.map(work => work.id));
   assert.deepEqual(workIds(portfolio), workIds(freelance));
-  assert.equal((portfolio.match(/class="slider-dot(?: active)?"/g) || []).length, data.works.filter(work => work.category === 'animation').length);
+  assert.ok(portfolio.indexOf('id="works"') < portfolio.indexOf('id="about"'));
+  assert.ok(portfolio.includes('PORTFOLIO · 作品集'));
+  assert.ok(freelance.includes('FREELANCE · 動畫與分鏡服務'));
+  assert.ok(!portfolio.includes('<iframe'));
+  for (const category of ['animation', 'logo', 'storyboard']) assert.ok(portfolio.includes(`href="#${category}"`));
 });
 
 test('portfolio excludes freelance sections, CTAs and quote mail templates', () => {
@@ -59,6 +63,6 @@ test('one data edit propagates to both variants and HTML text is escaped', () =>
     const html = renderPage({ ...changed, variant });
     assert.ok(html.includes('Updated &lt;work&gt; &amp; &quot;title&quot;'));
     assert.ok(workIds(html).includes('additional-animation'));
-    assert.equal((html.match(/class="slider-dot(?: active)?"/g) || []).length, 4);
+    assert.equal((html.match(/data-video=/g) || []).length, 7);
   }
 });

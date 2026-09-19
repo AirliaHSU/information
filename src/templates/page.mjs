@@ -23,12 +23,14 @@ export function renderPage({ profile, works, services, config, variant }) {
 </head>
 <body data-variant="${escape(variant.id)}">
   <main class="page">
+    <nav class="site-nav" aria-label="主要導覽"><span class="edition">${variant.id === 'portfolio' ? 'PORTFOLIO · 作品集' : 'FREELANCE · 動畫與分鏡服務'}</span><div><a href="#works">作品</a><a href="#about">關於我</a><a href="#contact">聯絡</a></div></nav>
     ${hero(profile, variant, href, asset)}
-    ${intro(profile)}
     ${worksSection(works, asset)}
+    ${intro(profile)}
     ${servicePlans(services, profile, variant)}
     ${contact(profile, variant, services, href)}
     ${footer(profile)}
+    <dialog class="image-dialog" aria-label="分鏡大圖"><button type="button" class="dialog-close">關閉大圖</button><img alt=""></dialog>
   </main>
 </body>
 </html>
