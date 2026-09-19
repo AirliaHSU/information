@@ -658,17 +658,92 @@ body { overflow-x: clip; }
 .page::after { bottom: 0; right: 0; }
 
 /* Shared centered introduction and text-only category navigation. */
-body[data-variant] .hero { text-align: center; margin-bottom: 40px; }
-body[data-variant] .hero-header { flex-direction: column; align-items: center; gap: 16px; }
-body[data-variant] #works > .section-title { margin: 0 0 16px; }
-body[data-variant] .work-tabs { justify-content: center; align-items: center; gap: 16px; margin: 0 0 28px; }
-body[data-variant] .work-tabs a { position: relative; padding: 6px 0 10px; border: 0; border-radius: 0; background: transparent; color: var(--text-sub); white-space: nowrap; transition: none; }
-body[data-variant] .work-tabs a:hover { color: var(--text-main); }
-body[data-variant] .work-tabs a[aria-selected="true"] { color: var(--gold); }
-body[data-variant] .work-tabs a[aria-selected="true"]::after { content: ""; position: absolute; bottom: 0; left: 50%; width: 24px; height: 1px; background: var(--gold); transform: translateX(-50%); }
-body[data-variant] .work-tabs .tab-separator { margin: 0; font-size: .8rem; color: var(--text-sub); opacity: .7; }
+body[data-variant] .hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body[data-variant] .hero-header {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+body[data-variant] #works > .section-title {
+  margin: 0 0 16px;
+}
+
+body[data-variant] .work-tabs {
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 28px;
+}
+
+body[data-variant] .work-tabs a {
+  position: relative;
+  padding: 6px 0 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-sub);
+  white-space: nowrap;
+  font-size: 1rem;
+  transition: color .2s ease, transform .2s ease;
+}
+
+body[data-variant] .work-tabs a:hover {
+  color: var(--gold);
+  transform: scale(1.06);
+}
+
+body[data-variant] .work-tabs a[aria-selected="true"] {
+  color: var(--gold);
+}
+
+body[data-variant] .work-tabs a[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  transform: translateX(-50%);
+}
+
+body[data-variant] .work-tabs .tab-separator {
+  margin: 0;
+  font-size: .8rem;
+  color: var(--text-sub);
+  opacity: .7;
+}
+
+/* Work card hover interaction */
+body[data-variant] .work-grid .work-card {
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+body[data-variant] .work-grid .work-card:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: var(--gold-mid);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .22);
+}
+
 @media (max-width: 768px) {
-  body[data-variant] .hero { margin-bottom: 32px; }
-  body[data-variant] .work-tabs { gap: 8px; margin-bottom: 22px; }
-  body[data-variant] .work-tabs a { font-size: .78rem; }
+  body[data-variant] .hero {
+    margin-bottom: 32px;
+  }
+
+  body[data-variant] .work-tabs {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  body[data-variant] .work-tabs a {
+    font-size: .86rem;
+  }
 }
