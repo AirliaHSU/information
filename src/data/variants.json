@@ -1,0 +1,49 @@
+{
+  "siteUrl": "https://airliahsu.github.io",
+  "basePath": "/information/",
+  "shareImage": "images/sb-01.png",
+  "pages": [
+    {
+      "id": "freelance",
+      "path": "",
+      "title": "Airlia / 放空｜2D 動畫與分鏡設計接案",
+      "description": "提供 2D 動畫、分鏡設計與 Logo Motion 服務，瀏覽作品、服務方案與合作說明。",
+      "role": "2D 動畫設計師",
+      "roleSuffix": "｜分鏡 × 動態視覺",
+      "tagline": "擅長把抽象概念整理成清楚又好看的動畫節奏，讓內容更容易被理解與記住。",
+      "cta": "開始討論專案",
+      "showServices": true,
+      "contactIntro": [
+        "目前主要以自由接案方式合作，專注於 2D 動畫與分鏡相關專案。",
+        "無論您已有完整腳本，或只有初步構想，都歡迎來信討論。"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "path": "portfolio/",
+      "title": "Airlia / 放空｜Motion Designer・2D Animation 作品集",
+      "description": "Airlia 的動態設計作品集，涵蓋 2D Animation、Logo Motion 與分鏡設計，呈現動畫節奏、資訊視覺化與敘事能力。",
+      "role": "Motion Designer",
+      "roleSuffix": "｜2D Animation",
+      "tagline": "專注 2D 動畫、分鏡與動態視覺，將抽象概念轉化為清楚、具節奏感的畫面。",
+      "cta": "聯繫職缺與面談",
+      "showServices": false,
+      "contactIntro": [
+        "尋找 Motion Designer／2D Animation／動態視覺相關正職機會。",
+        "歡迎來信交流職缺、團隊需求與面談安排。"
+      ],
+      "mailSubject": "【職缺與面談】聯繫 Airlia",
+      "mailBody": [
+        "嗨 Airlia，",
+        "我想與你交流以下職缺／面談機會：",
+        "",
+        "公司／團隊：",
+        "職缺名稱：",
+        "職缺連結或工作內容：",
+        "聯絡方式：",
+        "",
+        "謝謝！"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+[
+  {
+    "id": "huzu",
+    "category": "animation",
+    "title": "HUZU 平台宣傳動畫",
+    "tags": [
+      "平台宣傳",
+      "分鏡＋全流程動畫",
+      "2025"
+    ],
+    "description": "為「HUZU 平台」製作的新型態產學互助平台宣傳影片，將平台流程與價值以清楚、易懂的節奏呈現。",
+    "videoId": "owZXk7mlcvg",
+    "videoTitle": "HUZU 平台宣傳動畫",
+    "roles": [
+      "分鏡設計",
+      "資訊結構整理",
+      "動態視覺"
+    ],
+    "tools": [
+      "AI",
+      "PS",
+      "AE",
+      "PR"
+    ]
+  },
+  {
+    "id": "holly-hair",
+    "category": "animation",
+    "title": "Holly Hair 品牌核心動畫",
+    "tags": [
+      "品牌形象",
+      "核心概念轉譯",
+      "2024"
+    ],
+    "description": "以品牌核心價值與產品特色為主軸，將抽象概念具象成穩定又有溫度的視覺語彙。",
+    "videoId": "EHiU6NXAqSo",
+    "videoTitle": "Holly Hair 品牌核心動畫",
+    "roles": [
+      "品牌視覺統整",
+      "動態設計"
+    ],
+    "tools": [
+      "AI",
+      "PS",
+      "AE"
+    ]
+  },
+  {
+    "id": "xido",
+    "category": "animation",
+    "title": "璽朵批發平台廣告 動畫",
+    "tags": [
+      "平台廣告",
+      "角色情境動畫",
+      "2023"
+    ],
+    "description": "以日常情境切入，透過角色表情與畫面節奏，強化觀眾代入感與轉換意圖。",
+    "videoId": "wmJIkAjpgsQ",
+    "videoTitle": "璽朵批發平台廣告 動畫",
+    "roles": [
+      "腳本拆解",
+      "角色動態",
+      "投放友善版"
+    ],
+    "tools": [
+      "AI",
+      "PS",
+      "AE"
+    ]
+  },
+  {
+    "id": "logo-01",
+    "category": "logo",
+    "title": "LOGO 動畫",
+    "tags": [
+      "Logo Reveal",
+      "動態識別"
+    ],
+    "description": "",
+    "videoId": "v9HxXCU7ZfY",
+    "videoTitle": "品牌 LOGO 動畫 01",
+    "roles": [],
+    "tools": []
+  },
+  {
+    "id": "logo-02",
+    "category": "logo",
+    "title": "LOGO 動畫",
+    "tags": [
+      "Logo Reveal",
+      "光影動態"
+    ],
+    "description": "",
+    "videoId": "br1mqqqbxuI",
+    "videoTitle": "品牌 LOGO 動畫 02",
+    "roles": [],
+    "tools": []
+  },
+  {
+    "id": "logo-03",
+    "category": "logo",
+    "title": "LOGO 動畫",
+    "tags": [
+      "Logo Reveal",
+      "簡潔轉場"
+    ],
+    "description": "",
+    "videoId": "An8EDp59dfY",
+    "videoTitle": "品牌 LOGO 動畫 03",
+    "roles": [],
+    "tools": []
+  },
+  {
+    "id": "storyboard-01",
+    "category": "storyboard",
+    "title": "【分鏡展示】角色情緒 × 故事敘事",
+    "description": "以情緒推進與鏡頭節奏為主軸，規劃「起－承－轉－合」的敘事結構，展現分鏡規劃與畫面鋪陳能力。",
+    "images": [
+      {
+        "src": "images/sb-01.png",
+        "alt": "【分鏡展示】角色情緒 × 故事敘事"
+      }
+    ]
+  },
+  {
+    "id": "storyboard-02",
+    "category": "storyboard",
+    "title": "【分鏡展示】科技平台使用情境（HUZU）",
+    "description": "將平台流程拆解成清楚的畫面節奏，提升腳本與客戶溝通效率，並降低資訊理解成本。",
+    "images": [
+      {
+        "src": "images/sb-02.png",
+        "alt": "【分鏡展示】科技平台使用情境（HUZU）"
+      }
+    ]
+  },
+  {
+    "id": "storyboard-03",
+    "category": "storyboard",
+    "title": "【分鏡展示】文化敘事動畫",
+    "description": "透過多場景轉場、鏡頭調度與節奏控制，呈現敘事型動畫的前期規劃能力。",
+    "images": [
+      {
+        "src": "images/sb-03.png",
+        "alt": "【分鏡展示】文化敘事動畫"
+      }
+    ]
+  }
+]
