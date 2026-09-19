@@ -6,6 +6,8 @@ tablist.setAttribute('role', 'tablist');
 tabs.forEach(tab => { tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', tab.hash.slice(1)); });
 panels.forEach(panel => { panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', `tab-${panel.id}`); panel.tabIndex = 0; });
 function selectCategory(id) {
+  const heading = document.querySelector('#works > .section-title .label');
+  if (heading) heading.textContent = panels.find(panel => panel.id === id).getAttribute('aria-label');
   panels.forEach(panel => {
     panel.hidden = panel.id !== id;
     if (panel.hidden) panel.querySelectorAll('iframe').forEach(frame => frame.replaceWith(frame._cover));

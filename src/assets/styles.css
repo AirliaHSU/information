@@ -650,3 +650,19 @@ body[data-variant="portfolio"] { --bg-elevated: #143d32; --border-soft: #536548;
 body { overflow-x: clip; }
 .page::before { top: 0; left: 0; }
 .page::after { bottom: 0; right: 0; }
+
+/* Portfolio: centered introduction and text-only category navigation. */
+body[data-variant="portfolio"] .hero { text-align: center; margin-bottom: 40px; }
+body[data-variant="portfolio"] .hero-header { flex-direction: column; align-items: center; gap: 16px; }
+body[data-variant="portfolio"] #works > .section-title { margin: 0 0 16px; }
+body[data-variant="portfolio"] .work-tabs { justify-content: center; align-items: center; gap: 16px; margin: 0 0 28px; }
+body[data-variant="portfolio"] .work-tabs a { position: relative; padding: 6px 0 10px; border: 0; border-radius: 0; background: transparent; color: var(--text-sub); white-space: nowrap; transition: none; }
+body[data-variant="portfolio"] .work-tabs a:hover { color: var(--text-main); }
+body[data-variant="portfolio"] .work-tabs a[aria-selected="true"] { color: var(--gold); }
+body[data-variant="portfolio"] .work-tabs a[aria-selected="true"]::after { content: ""; position: absolute; bottom: 0; left: 50%; width: 24px; height: 1px; background: var(--gold); transform: translateX(-50%); }
+body[data-variant="portfolio"] .work-tabs .tab-separator { margin: 0; font-size: .8rem; color: var(--text-sub); opacity: .7; }
+@media (max-width: 768px) {
+  body[data-variant="portfolio"] .hero { margin-bottom: 32px; }
+  body[data-variant="portfolio"] .work-tabs { gap: 8px; margin-bottom: 22px; }
+  body[data-variant="portfolio"] .work-tabs a { font-size: .78rem; }
+}
