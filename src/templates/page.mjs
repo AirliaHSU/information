@@ -25,7 +25,7 @@ export function renderPage({ profile, works, services, config, variant }) {
   <main class="page">
     <nav class="site-nav" aria-label="主要導覽"><span class="edition">${variant.id === 'portfolio' ? 'PORTFOLIO · 作品集' : 'FREELANCE · 動畫與分鏡服務'}</span><div><a href="#works">作品</a><a href="#about">關於我</a><a href="#contact">聯絡</a></div></nav>
     ${hero(profile, variant, href, asset)}
-    ${worksSection(works, asset, variant.id === 'portfolio')}
+    ${worksSection(works, asset, true)}
     ${intro(profile)}
     ${servicePlans(services, profile, variant)}
     ${contact(profile, variant, services, href)}
