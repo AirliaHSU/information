@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFile, mkdir, writeFile, cp, rm, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
@@ -34,6 +35,9 @@ export async function build() {
   await rm(output, { recursive: true, force: true });
   await mkdir(output, { recursive: true });
   await cp(resolve(root, 'src/assets'), resolve(output, 'assets'), { recursive: true });
+  const css = await readFile(resolve(root, 'src/assets/styles.css'));
+  config.stylesheetPath = `assets/styles.${createHash('sha256').update(css).digest('hex').slice(0, 12)}.css`;
+  await writeFile(resolve(output, config.stylesheetPath), css);
   await cp(resolve(root, 'images'), resolve(output, 'images'), { recursive: true });
   await cp(resolve(root, profile.avatar), resolve(output, profile.avatar));
   await writeFile(resolve(output, '.nojekyll'), '');

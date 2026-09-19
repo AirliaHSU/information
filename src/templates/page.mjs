@@ -18,7 +18,7 @@ export function renderPage({ profile, works, services, config, variant }) {
   <meta property="og:image" content="${escape(new URL(config.basePath + config.shareImage, config.siteUrl).href)}">
   <meta property="og:url" content="${escape(url)}">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="${asset('assets/styles.css')}">
+  <link rel="stylesheet" href="${asset(config.stylesheetPath || 'assets/styles.css')}">
   <script src="${asset('assets/main.js')}" defer></script>
 </head>
 <body data-variant="${escape(variant.id)}">
