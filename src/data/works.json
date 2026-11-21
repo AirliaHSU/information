@@ -105,16 +105,20 @@
       "Live2D",
       "2026"
     ],
-    "description": "Live2D 角色 PV 的場景更新版本，重新設計背景與畫面氛圍。",
+    "description": "Live2D 角色 PV 的場景更新版本：以 GPT 生成場景概念、Blender 建模，再用 Higgsfield 風格化，重新設計背景與畫面氛圍。",
     "videoId": "7s1KtQVPJ1k",
     "videoTitle": "角色 PV（場景更新版）",
     "roles": [
       "Live2D 建模",
+      "場景建模",
       "動態演出",
       "後製合成"
     ],
     "tools": [
       "Live2D",
+      "GPT",
+      "Blender",
+      "Higgsfield",
       "AE"
     ]
   },
