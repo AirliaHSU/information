@@ -37,7 +37,7 @@ npm run preview
 ### 新增作品
 
 1. 在 `works.json` 複製同類別的作品物件，設定唯一 `id`。
-2. 類別為 `animation`、`logo` 或 `storyboard`。各類別按照資料陣列中的順序顯示。
+2. 類別為 `animation`、`character`、`logo` 或 `storyboard`。各類別按照資料陣列中的順序顯示。
 3. 影片填 YouTube 的 11 字元 ID，並填寫 `videoTitle`、`tags`、`roles`、`tools`；沒有項目時使用空陣列。
 4. 分鏡圖片放在 `images/`，在 `images` 陣列填 `src` 與有意義的 `alt`。檔名使用英數字、連字號或底線；支援每組多張圖片。
 5. 執行 `npm test`。兩版與作品分類數量會自動更新，不必修改 HTML。
@@ -72,8 +72,8 @@ PR 只執行建置與測試，不部署。部署僅限 `main` 的 push 或手動
 
 作品優先排列，其後為 About／Skills、接案版服務方案與 Contact。
 求職版為墨綠金框，接案版為黑金，頂部有版本識別與固定導覽。
-動畫作品、Logo Motion、分鏡設計採同頁分類切換，支援鍵盤方向鍵與瀏覽器返回。
-可分享 `#animation`、`#logo`、`#storyboard` 直接開啟分類。
+動畫作品、角色動畫、Logo Motion、分鏡設計採同頁分類切換，支援鍵盤方向鍵與瀏覽器返回。
+可分享 `#animation`、`#character`、`#logo`、`#storyboard` 直接開啟分類。
 影片先顯示 YouTube 封面，點擊才載入播放器；切換分類會停止舊分類的影片。
 分鏡點擊開啟完整圖片，支援 Escape 關閉並恢復焦點。進場效果尊重減少動態效果偏好。
 停用 JavaScript 時，所有分類保持可見，影片連至 YouTube，分鏡連至原圖。

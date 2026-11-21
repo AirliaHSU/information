@@ -21,7 +21,7 @@ export async function build() {
   for (const path of paths) if (!/^(?:[\w-]+\/)*$/.test(path)) throw new Error(`無效頁面路徑：${path}`);
   const assets = [profile.avatar, config.shareImage];
   for (const work of works) {
-    if (!['animation', 'logo', 'storyboard'].includes(work.category)) throw new Error(`無效作品類別：${work.id}`);
+    if (!['animation', 'character', 'logo', 'storyboard'].includes(work.category)) throw new Error(`無效作品類別：${work.id}`);
     if (work.category === 'storyboard') assets.push(...work.images.map(image => image.src));
     else if (!/^[\w-]{11}$/.test(work.videoId)) throw new Error(`無效 YouTube ID：${work.id}`);
   }

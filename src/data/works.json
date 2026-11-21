@@ -69,6 +69,77 @@
     ]
   },
   {
+    "id": "halo-not-found",
+    "category": "character",
+    "title": "HALO NOT FOUND｜錯頻天使 404 角色 PV",
+    "tags": [
+      "原創角色 PV",
+      "AI × After Effects",
+      "2026"
+    ],
+    "description": "收不到神諭的深夜電台 DJ 天使。以 AI 生成角色圖像與鏡頭動態，After Effects 合成光環、轉場、glitch、音效與歌詞動態字幕。",
+    "videoId": "BBZazBk2A4c",
+    "videoTitle": "HALO NOT FOUND｜錯頻天使 404｜AI × After Effects 角色 PV",
+    "roles": [
+      "角色設計",
+      "分鏡與時間碼",
+      "AE 合成",
+      "音效設計",
+      "歌詞字幕"
+    ],
+    "tools": [
+      "GPT",
+      "Seedance",
+      "Flow",
+      "Dreamina",
+      "Live2D",
+      "AE"
+    ]
+  },
+  {
+    "id": "character-pv-scene",
+    "category": "character",
+    "title": "角色 PV（場景更新版）",
+    "tags": [
+      "角色 PV",
+      "Live2D",
+      "2026"
+    ],
+    "description": "Live2D 角色 PV 的場景更新版本，重新設計背景與畫面氛圍。",
+    "videoId": "7s1KtQVPJ1k",
+    "videoTitle": "角色 PV（場景更新版）",
+    "roles": [
+      "Live2D 建模",
+      "動態演出",
+      "後製合成"
+    ],
+    "tools": [
+      "Live2D",
+      "AE"
+    ]
+  },
+  {
+    "id": "live2d-showcase",
+    "category": "character",
+    "title": "Live2D 模型展示",
+    "tags": [
+      "Live2D",
+      "模型展示",
+      "2026"
+    ],
+    "description": "Live2D 角色模型展示，呈現表情差分、眼睛彈性效果，以及頭髮與服裝物理。",
+    "videoId": "Ertj5W9M8yc",
+    "videoTitle": "Live2D 模型展示",
+    "roles": [
+      "Live2D 建模",
+      "物理設定"
+    ],
+    "tools": [
+      "Live2D",
+      "AE"
+    ]
+  },
+  {
     "id": "logo-01",
     "category": "logo",
     "title": "LOGO 動畫",
