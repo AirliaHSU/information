@@ -2,23 +2,27 @@
   "name": "Airlia / 放空",
   "avatar": "airlia-avatar.png",
   "avatarAlt": "Airlia 的頭像",
-  "about": "Hi! 我是 Airlia，擁有 8 年實戰經驗，擅長將抽象概念轉化為清晰、具節奏感的動畫視覺。專注於讓複雜的資訊變得好懂且耐看。",
+  "about": "Hi! 我是 Airlia，擁有 8 年影片剪輯與 5 年動畫經驗，擅長將抽象概念轉化為清晰、具節奏感的動畫視覺。近年也結合 Live2D 與 AI 生成工具，以 After Effects 後製製作具敘事感的角色 PV。",
   "tags": [
     "2D 動畫設計",
     "分鏡腳本規劃",
-    "資訊視覺化"
+    "角色 PV",
+    "AI 影像後製"
   ],
   "skills": [
     "平台／品牌宣傳動畫：畫面節奏規劃、資訊分段與轉場設計",
-    "分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握"
+    "分鏡設計：從腳本拆解畫面、構圖與運鏡設計、節奏掌握",
+    "角色 PV：Live2D 角色演出、AI 生成素材整合，After Effects 合成、調色、音效與歌詞字幕"
   ],
   "tools": [
     "After Effects",
     "Premiere",
     "Photoshop",
     "Illustrator",
-    "Clip Studio Paint"
+    "Clip Studio Paint",
+    "Live2D Cubism",
+    "AI 影像工具（Seedance／Flow／Dreamina）"
   ],
   "email": "airlia.animation@gmail.com",
-  "footer": "Airlia / 放空．2D 動畫與視覺創作"
+  "footer": "Airlia / 放空．2D 動畫、角色 PV 與動態視覺"
 }
