@@ -97,6 +97,34 @@
     ]
   },
   {
+    "id": "lingyu-wind-chime",
+    "category": "character",
+    "title": "鈴語｜風鈴調律師 角色 PV",
+    "tags": [
+      "原創角色 PV",
+      "AI × After Effects",
+      "2026"
+    ],
+    "description": "屋簷下的風鈴失去了聲音，調律師以指尖將它喚回。從 2D 角色設計轉為 3D 風格與四視圖，再生成角色動態；After Effects 完成補景合成、以退色與回色呼應聲音的消失與回歸，並設計標題字卡與音效。",
+    "videoId": "UIgHW2SIbKI",
+    "videoTitle": "鈴語｜風鈴調律師｜AI × After Effects 角色 PV",
+    "roles": [
+      "角色設計",
+      "故事與音效設計",
+      "AE 合成與調色",
+      "標題字卡設計"
+    ],
+    "tools": [
+      "GPT",
+      "Nano Banana",
+      "Seedream",
+      "Seedance",
+      "PS",
+      "AI",
+      "AE"
+    ]
+  },
+  {
     "id": "character-pv-scene",
     "category": "character",
     "title": "角色 PV（場景更新版）",
