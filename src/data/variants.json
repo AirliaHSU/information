@@ -22,10 +22,10 @@
       "id": "portfolio",
       "path": "portfolio/",
       "title": "Airlia / 放空｜Motion Designer・2D Animation 作品集",
-      "description": "Airlia 的動態設計作品集，涵蓋 2D Animation、Logo Motion 與分鏡設計，呈現動畫節奏、資訊視覺化與敘事能力。",
+      "description": "Airlia 的動態設計作品集，涵蓋 2D Animation、角色 PV（Live2D／AI × After Effects）、Logo Motion 與分鏡設計。",
       "role": "Motion Designer",
-      "roleSuffix": "｜2D Animation",
-      "tagline": "專注 2D 動畫、分鏡與動態視覺，將抽象概念轉化為清楚、具節奏感的畫面。",
+      "roleSuffix": "｜2D Animation・Character PV",
+      "tagline": "專注 2D 動畫、分鏡與角色 PV，結合 Live2D、AI 生成與 After Effects 後製，將概念轉化為清楚、具節奏感的畫面。",
       "cta": "聯繫職缺與面談",
       "showServices": false,
       "contactIntro": [
