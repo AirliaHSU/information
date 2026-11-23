@@ -97,6 +97,33 @@
     ]
   },
   {
+    "id": "halo-not-found-breakdown",
+    "category": "character",
+    "title": "HALO NOT FOUND｜AI 素材 vs 後製對比",
+    "tags": [
+      "後製對比",
+      "AI × After Effects",
+      "2026"
+    ],
+    "description": "《錯頻天使 404》的後製前後對比：左為 AI 生成原始素材，右為 After Effects 完成畫面。包含調頻介面合成、調色、光環、局部 glitch、Live2D 翅膀拍動、眼睛發光、羽毛粒子、歌詞動態字幕、訊號中斷轉場與標題字卡。",
+    "videoId": "yS9JghMnGX4",
+    "videoTitle": "HALO NOT FOUND｜錯頻天使 404｜AI 素材 vs After Effects 後製對比",
+    "roles": [
+      "AE 合成與調色",
+      "特效與轉場",
+      "Live2D 翅膀",
+      "歌詞字幕與字卡"
+    ],
+    "tools": [
+      "GPT",
+      "Seedance",
+      "Flow",
+      "Dreamina",
+      "Live2D",
+      "AE"
+    ]
+  },
+  {
     "id": "lingyu-wind-chime",
     "category": "character",
     "title": "鈴語｜風鈴調律師 角色 PV",
